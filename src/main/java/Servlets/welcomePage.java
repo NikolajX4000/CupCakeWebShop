@@ -60,7 +60,7 @@ public class welcomePage extends HttpServlet
         if(redirectMe){
             response.sendRedirect("shop");
         }else{
-            getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/loginPage.jsp").forward(request, response);
         }
  
     }
