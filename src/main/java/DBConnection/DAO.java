@@ -47,7 +47,7 @@ public class DAO {
         PreparedStatement stmt = null;
         ArrayList<User> users = new ArrayList();
         try {
-            String sql = "SELECT * FROM users WHERE;";
+            String sql = "SELECT * FROM users;";
             stmt = conn.getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
