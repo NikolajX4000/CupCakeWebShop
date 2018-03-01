@@ -335,19 +335,18 @@ public class DAO {
         return orders;
     }
     
-    public ArrayList<Order> getAllOrders(int id){
+    public ArrayList<Order> getAllOrders(){
         ArrayList<Order> orders = new ArrayList();
         PreparedStatement stmt = null;
         try {
             String sql = "SELECT * "
                     + "FROM orders;";
             stmt = conn.getConnection().prepareStatement(sql);
-            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 int orderId = rs.getInt("id");
                 String dateTime = rs.getString("date");
-                orders.add(new Order(id,getOrder(orderId).getOrder(), dateTime));
+                orders.add(new Order(orderId,getOrder(orderId).getOrder(), dateTime));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
