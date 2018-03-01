@@ -347,7 +347,7 @@ public class DAO {
             while (rs.next()) {
                 int orderId = rs.getInt("id");
                 String dateTime = rs.getString("date");
-                orders.add(new Order(id,getOrder(orderId), dateTime));
+                orders.add(new Order(id,getOrder(orderId).getOrder(), dateTime));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
