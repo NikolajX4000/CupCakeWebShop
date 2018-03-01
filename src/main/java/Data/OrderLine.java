@@ -14,20 +14,20 @@ import java.util.Objects;
 public class OrderLine
 {
     private String username;
-    private int user_id;
-    private int order_id;
-    private int order_line_id;
+    private int userId;
+    private int orderId;
+    private int orderlineId;
     private CupCakePiece topping;
     private CupCakePiece bottom;
     private double price;
     private int amount;
 
-    public OrderLine(String username, int user_id, int order_id, int order_line_id, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
+    public OrderLine(String username, int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
     {
         this.username = username;
-        this.user_id = user_id;
-        this.order_id = order_id;
-        this.order_line_id = order_line_id;
+        this.userId = userId;
+        this.orderId = orderId;
+        this.orderlineId = orderlineId;
         this.topping = topping;
         this.bottom = bottom;
         this.price = price;
@@ -39,19 +39,19 @@ public class OrderLine
         return username;
     }
 
-    public int getUser_id()
+    public int getUserId()
     {
-        return user_id;
+        return userId;
     }
 
-    public int getOrder_id()
+    public int getOrderId()
     {
-        return order_id;
+        return orderId;
     }
 
-    public int getOrder_line_id()
+    public int getOrderlineId()
     {
-        return order_line_id;
+        return orderlineId;
     }
 
     public CupCakePiece getTopping()
@@ -84,7 +84,7 @@ public class OrderLine
     public int hashCode()
     {
         int hash = 5;
-        hash = 79 * hash + this.order_line_id;
+        hash = 79 * hash + this.orderlineId;
         hash = 79 * hash + Objects.hashCode(this.topping);
         hash = 79 * hash + Objects.hashCode(this.bottom);
         return hash;
@@ -103,7 +103,7 @@ public class OrderLine
             return false;
         }
         final OrderLine other = (OrderLine) obj;
-        if (this.order_line_id != other.order_line_id) {
+        if (this.orderlineId != other.orderlineId) {
             return false;
         }
         if (!Objects.equals(this.topping, other.topping)) {
