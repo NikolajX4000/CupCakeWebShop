@@ -40,19 +40,19 @@ public class shopPage extends HttpServlet
             throws ServletException, IOException
     {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         DAO dao = new DAO();
-        ArrayList<CupCakePiece> bottoms = dao.getBottoms();
-        ArrayList<CupCakePiece> toppings = dao.getToppings();
+        request.setAttribute("toppings", dao.getToppings());
+        request.setAttribute("bottoms", dao.getBottoms());
         getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
-        
+
         try (PrintWriter out = response.getWriter())
         {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet shopPage</title>");            
+            out.println("<title>Servlet shopPage</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet shopPage at " + request.getContextPath() + "</h1>");
