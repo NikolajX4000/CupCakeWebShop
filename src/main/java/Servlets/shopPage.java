@@ -52,7 +52,7 @@ public class shopPage extends HttpServlet
             s.setAttribute("order", order);
         }
 
-        if (request.getParameter("action").equals("addToOrder"))
+        if (request.getParameter("action") != null && request.getParameter("action").equals("addToOrder"))
         {
             order = (ArrayList<CupCake>) s.getAttribute("order");
             CupCakePiece bottom = dao.getBottom((int)request.getAttribute("bottom"));
