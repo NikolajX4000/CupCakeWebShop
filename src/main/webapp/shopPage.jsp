@@ -73,26 +73,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Vanilla</td>
-                            <td>Chocolate</td>
-                            <td>5</td>
-                            <td>x</td>
-                        </tr>
-                        <tr>
-                            <td>Onion</td>
-                            <td>Salt</td>
-                            <td>2</td>
-                            <td>x</td>
-                        </tr>
-                        <tr>  
-                            <td>Pizza</td>
-                            <td>Burger</td>
-                            <td>420</td>
-                            <td>x</td>
-                        </tr>
-
-
                         <%
 
                             for (CupCake c : cart)
