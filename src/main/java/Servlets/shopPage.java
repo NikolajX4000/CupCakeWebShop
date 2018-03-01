@@ -46,7 +46,8 @@ public class shopPage extends HttpServlet
         DAO dao = new DAO();
 
         HttpSession session = request.getSession();
-
+        session.setAttribute("curPage", "shop");
+        
         if (session.getAttribute("user") == null)
         {
             response.sendRedirect("index.jsp");
@@ -87,9 +88,19 @@ public class shopPage extends HttpServlet
             } else if (request.getParameter("action") != null && request.getParameter("action").equals("checkOut"))
             {
                 cart = (ArrayList<CupCake>) session.getAttribute("cart");
-                User user = (User) session.getAttribute("user");
-                dao.insertOrder(cart, user);
-                session.setAttribute("cart", new ArrayList<CupCake>());
+                if (!cart.isEmpty())
+                {
+                    User user = (User) session.getAttribute("user");
+                    dao.insertOrder(cart, user);
+                    session.setAttribute("cart", new ArrayList<CupCake>());
+                }
+            } else if (request.getParameter("action") != null && request.getParameter("action").equals("updateCart"))
+            {
+                cart = (ArrayList<CupCake>) session.getAttribute("cart");
+                for (int i = 0; i < cart.size(); i++)
+                {
+                    cart.get(i).setAmount(Integer.parseInt(request.getParameter(Integer.toString(i))));
+                }
             }
             request.setAttribute("toppings", dao.getToppings());
             request.setAttribute("bottoms", dao.getBottoms());
