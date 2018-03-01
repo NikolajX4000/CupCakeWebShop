@@ -6,9 +6,11 @@
 package Servlets;
 
 import DBConnection.DAO;
+import Data.Order;
 import Data.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -58,9 +60,15 @@ public class adminOrderPage extends HttpServlet
             {
                 if (request.getParameter("id") != null)
                 {
-                    request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
-
-                    getServletContext().getRequestDispatcher("/adminSpecificOrderPage.jsp").forward(request, response);
+                    
+                    Order order = dao.getOrder(Integer.parseInt(request.getParameter("id")));
+                    
+                    if(!order.getOrder().isEmpty()){
+                        request.setAttribute("orderDetails", order);
+                        getServletContext().getRequestDispatcher("/adminSpecificOrderPage.jsp").forward(request, response);
+                    }else{
+                        response.sendRedirect("adminOrder");
+                    }
                 } else
                 {
 
