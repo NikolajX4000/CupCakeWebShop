@@ -8,6 +8,7 @@ package Servlets;
 import DBConnection.DAO;
 import Data.CupCake;
 import Data.CupCakePiece;
+import Data.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -45,19 +46,20 @@ public class shopPage extends HttpServlet
         DAO dao = new DAO();
 
         HttpSession s = request.getSession();
-        ArrayList<CupCake> order = new ArrayList();
+        ArrayList<CupCake> order;
 
         if (s.getAttribute("order") == null)
         {
+            order = new ArrayList();
             s.setAttribute("order", order);
         }
 
         if (request.getParameter("action") != null && request.getParameter("action").equals("addToOrder"))
         {
-            order = (ArrayList<CupCake>) s.getAttribute("order");
-            CupCakePiece bottom = dao.getBottom((int)request.getAttribute("bottom"));
-            CupCakePiece topping = dao.getBottom((int)request.getAttribute("topping")); 
-            CupCake cupcake = new CupCake(bottom, topping, (int) request.getAttribute("amount"));
+            order = (ArrayList<CupCake>) s.getAttribute("order");         
+            CupCakePiece bottom = dao.getBottom(Integer.parseInt(request.getParameter("bottom")));
+            CupCakePiece topping = dao.getTopping(Integer.parseInt(request.getParameter("topping"))); 
+            CupCake cupcake = new CupCake(bottom, topping, Integer.parseInt(request.getParameter("amount")));
             order.add(cupcake);
             s.setAttribute("order", order);
 
