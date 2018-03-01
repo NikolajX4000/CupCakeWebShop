@@ -46,7 +46,7 @@ public class shopPage extends HttpServlet
         DAO dao = new DAO();
 
         HttpSession session = request.getSession();
-        session.setAttribute("curPage", "shop");
+        session.setAttribute("curPage", "welcome");
         
         if (session.getAttribute("user") == null)
         {
