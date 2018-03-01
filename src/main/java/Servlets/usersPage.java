@@ -5,6 +5,7 @@
  */
 package Servlets;
 
+import DBConnection.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,9 +39,21 @@ public class usersPage extends HttpServlet
             throws ServletException, IOException
     {
         response.setContentType("text/html;charset=UTF-8");
+        DAO dao = new DAO();
+        HttpSession s = request.getSession();
         
-        getServletContext().getRequestDispatcher("/userOrdersPage.jsp").forward(request, response);
+                
+        if (request.getParameter("id") != null)
+        {
+            s.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
+            getServletContext().getRequestDispatcher("/userSpecificOrderPage.jsp").forward(request, response);
+        } else
+        {
+            getServletContext().getRequestDispatcher("/userOrdersPage.jsp").forward(request, response);
+        }
+
         
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

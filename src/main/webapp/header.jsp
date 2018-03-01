@@ -24,7 +24,7 @@
 
         <div class="navbar navbar-dark navbar-expand-sm" style="background-color:chocolate">
             <div class="container">
-                <a href="#" class="navbar-brand">Cupcakes</a>
+                <a href="welcome" class="navbar-brand">Cupcakes</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
                     <span class="navbar-toggler-icon"></span>
@@ -33,16 +33,16 @@
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Link1</a>
+                            <a href="welcome" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Link2</a>
+                            <a href="users" class="nav-link">My Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Link3</a>
+                            <a href="#" class="nav-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Link4</a>
+                            <a href="#" class="nav-link">Help</a>
                         </li>
                     </ul>
                 </div>
