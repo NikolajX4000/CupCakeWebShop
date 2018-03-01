@@ -44,6 +44,9 @@ public class usersPage extends HttpServlet
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
         HttpSession s = request.getSession();
+        
+        
+        s.setAttribute("curPage", "users");
 
         if (s.getAttribute("user") == null)
         {

@@ -43,6 +43,8 @@ public class welcomePage extends HttpServlet
         DAO dao = new DAO();
         HttpSession s = request.getSession();
 
+        s.setAttribute("curPage", "welcome");
+        
         if (s.getAttribute("user") != null)
         {
             response.sendRedirect("shop");

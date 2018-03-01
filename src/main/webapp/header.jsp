@@ -4,7 +4,18 @@
     Author     : super
 --%>
 
+<%@page import="java.net.URL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+<%
+    String a = (String)session.getAttribute("curPage");
+
+    String b = " active";
+%>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,16 +44,16 @@
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="welcome" class="nav-link active">Home</a>
+                            <a href="welcome" class="nav-link<% if(a.equals("welcome"))out.print(b);%>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="users" class="nav-link">My Orders</a>
+                            <a href="users" class="nav-link<% if(a.equals("users"))out.print(b);%>">My Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a href="adminOrder" class="nav-link">Admin</a>
+                            <a href="adminOrder" class="nav-link<% if(a.equals("adminOrder"))out.print(b);%>">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a href="logout.jsp" class="nav-link">Logout</a>
+                            <a href="logout.jsp" class="nav-link<% if(a.equals("logout"))out.print(b);%>">Logout</a>
                         </li>
                     </ul>
                 </div>
