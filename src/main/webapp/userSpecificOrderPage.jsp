@@ -49,13 +49,13 @@
                 double price = 0;
                 for(OrderLine o : items){
                     out.println("<tr>");
-                    out.println("<td>" + o.getAmount() + "</td>");
-                    out.println("<td>" + o.getBottom().getFlavor() + "</td>");
-                    out.println("<td>" + o.getTopping().getFlavor()+ "</td>");
-                    out.println("<td>" + o.getPrice()*o.getAmount() + "</td>");
+                    out.println("<td>" + o.getCupCake().getAmount() + "</td>");
+                    out.println("<td>" + o.getCupCake().getBottom().getFlavor() + "</td>");
+                    out.println("<td>" + o.getCupCake().getTopping().getFlavor()+ "</td>");
+                    out.println("<td>" + o.getCupCake().getPrice()*o.getCupCake().getAmount() + "</td>");
                     out.println("</tr>");
                     
-                    price += (o.getPrice()*o.getAmount());
+                    price += (o.getCupCake().getPrice()*o.getCupCake().getAmount());
                     
                 }
                 
