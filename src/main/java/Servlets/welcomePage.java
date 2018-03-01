@@ -50,7 +50,7 @@ public class welcomePage extends HttpServlet
                 user = dao.login(request.getParameter("username"), request.getParameter("password"));
                 if (user != null) {
                     s.setAttribute("user", user);
-                    
+                    response.sendRedirect("/shop");
                 }
             }
         }
