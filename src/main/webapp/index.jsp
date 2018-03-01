@@ -8,15 +8,4 @@
 <!DOCTYPE html>
 <%@page import="Data.User"%>
 
-<%@include file="header.jsp" %>
-
-<%
-User user = (User)session.getAttribute("user");
-
-if(user != null)
-    %><jsp:include page="shopPage.jsp" flush="true"/><%
-else
-    %><jsp:include page="loginPage.jsp" flush="true"/><%
-%>
-
-<%@include file="footer.jsp" %>
+<% response.sendRedirect("welcome"); %>

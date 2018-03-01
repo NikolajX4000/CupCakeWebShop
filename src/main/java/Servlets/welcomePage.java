@@ -45,7 +45,7 @@ public class welcomePage extends HttpServlet
 
         User user = null;
 
-        boolean redirectMe = false;
+        String goHere = null;
 
         if (request.getParameter("action") != null)
         {
@@ -55,22 +55,22 @@ public class welcomePage extends HttpServlet
                 if (user != null)
                 {
                     s.setAttribute("user", user);
-                    redirectMe = true;
+                    goHere = "shop";
                 }
             }
             if (request.getParameter("action").equals("register"))
             {
                 boolean createdUser = dao.createCustomer(request.getParameter("username"), request.getParameter("password"), request.getParameter("password2"));
-                if (!createdUser)
+                if (createdUser)
                 {
-                    response.sendRedirect("createUserPage.jsp");
+                    goHere = "welcome";
                 }
             }
         }
 
-        if (redirectMe)
+        if (goHere != null)
         {
-            response.sendRedirect("shop");
+            response.sendRedirect(goHere);
         } else
         {
 
