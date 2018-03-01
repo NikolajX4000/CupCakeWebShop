@@ -42,6 +42,35 @@ public class DAO {
         }
         return res;
     }
+    
+    public ArrayList<User> getUsers() {
+        PreparedStatement stmt = null;
+        ArrayList<User> users = new ArrayList();
+        try {
+            String sql = "SELECT * FROM users WHERE;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("user_id");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                double balance = rs.getDouble("balance");
+                String role = rs.getString("role");
+                users.add( new User(id, username, password, balance, role));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return users;
+    }
 
     public boolean createCustomer(String username, String password1, String password2) {
         PreparedStatement stmt = null;
