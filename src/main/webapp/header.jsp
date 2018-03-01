@@ -39,7 +39,7 @@
                             <a href="users" class="nav-link">My Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">About</a>
+                            <a href="shop" class="nav-link">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Help</a>

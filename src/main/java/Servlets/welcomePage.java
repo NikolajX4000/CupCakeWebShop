@@ -43,48 +43,55 @@ public class welcomePage extends HttpServlet
         DAO dao = new DAO();
         HttpSession s = request.getSession();
 
-        User user = null;
-
-        String goHere = null;
-
-        if (request.getParameter("action") != null)
+        if (s.getAttribute("user") != null)
         {
-            if (request.getParameter("action").equals("login"))
-            {
-                user = dao.login(request.getParameter("username"), request.getParameter("password"));
-                if (user != null)
-                {
-                    s.setAttribute("user", user);
-                    goHere = "shop";
-                }
-            }
-            if (request.getParameter("action").equals("register"))
-            {
-                boolean createdUser = dao.createCustomer(request.getParameter("username"), request.getParameter("password"), request.getParameter("password2"));
-                if (createdUser)
-                {
-                    goHere = "welcome";
-                }
-            }
-        }
-
-        if (goHere != null)
-        {
-            response.sendRedirect(goHere);
+            response.sendRedirect("shop");
         } else
         {
 
-            //if(request.getReq("p") != null && request.getAttribute("p").equals("register")){
-            if (request.getParameter("p") != null && request.getParameter("p").equals("register"))
+            User user = null;
+
+            String goHere = null;
+
+            if (request.getParameter("action") != null)
             {
-                getServletContext().getRequestDispatcher("/createUserPage.jsp").forward(request, response);
+                if (request.getParameter("action").equals("login"))
+                {
+                    user = dao.login(request.getParameter("username"), request.getParameter("password"));
+                    if (user != null)
+                    {
+                        s.setAttribute("user", user);
+                        goHere = "shop";
+                    }
+                }
+                if (request.getParameter("action").equals("register"))
+                {
+                    boolean createdUser = dao.createCustomer(request.getParameter("username"), request.getParameter("password"), request.getParameter("password2"));
+                    if (createdUser)
+                    {
+                        goHere = "welcome";
+                    }
+                }
+            }
+
+            if (goHere != null)
+            {
+                response.sendRedirect(goHere);
             } else
             {
-                getServletContext().getRequestDispatcher("/loginPage.jsp").forward(request, response);
+
+                //if(request.getReq("p") != null && request.getAttribute("p").equals("register")){
+                if (request.getParameter("p") != null && request.getParameter("p").equals("register"))
+                {
+                    getServletContext().getRequestDispatcher("/createUserPage.jsp").forward(request, response);
+                } else
+                {
+                    getServletContext().getRequestDispatcher("/loginPage.jsp").forward(request, response);
+                }
+
             }
 
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

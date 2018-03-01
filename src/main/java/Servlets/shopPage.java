@@ -46,48 +46,56 @@ public class shopPage extends HttpServlet
         DAO dao = new DAO();
 
         HttpSession session = request.getSession();
-        ArrayList<CupCake> cart;
 
-        if (session.getAttribute("cart") == null)
+        if (session.getAttribute("user") == null)
         {
-            cart = new ArrayList();
-            session.setAttribute("cart", cart);
-        }
-
-        if (request.getParameter("action") != null && request.getParameter("action").equals("addToOrder"))
+            response.sendRedirect("index.jsp");
+        } else
         {
-            cart = (ArrayList<CupCake>) session.getAttribute("cart");
-            CupCakePiece bottom = dao.getBottom(Integer.parseInt(request.getParameter("bottom")));
-            CupCakePiece topping = dao.getTopping(Integer.parseInt(request.getParameter("topping")));
-            CupCake cupcake = new CupCake(bottom, topping, Integer.parseInt(request.getParameter("amount")));
 
-            boolean contains = false;
-            for (int i = 0; i < cart.size(); i++)
-            {
-                if (cart.get(i).equals(cupcake))
-                {
-                    cart.get(i).addAmount(Integer.parseInt(request.getParameter("amount")));
-                    contains = true;
-                }
+            ArrayList<CupCake> cart;
 
-            }
-            if (contains == false)
+            if (session.getAttribute("cart") == null)
             {
-                cart.add(cupcake);
+                cart = new ArrayList();
                 session.setAttribute("cart", cart);
             }
 
-        }else if (request.getParameter("action") != null && request.getParameter("action").equals("checkOut"))
-        {
-            cart = (ArrayList<CupCake>) session.getAttribute("cart");
-            User user = (User)session.getAttribute("user");
-            dao.insertOrder(cart, user);
-            session.setAttribute("cart", new ArrayList<CupCake>());
-        }
-        request.setAttribute("toppings", dao.getToppings());
-        request.setAttribute("bottoms", dao.getBottoms());
-        getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
+            if (request.getParameter("action") != null && request.getParameter("action").equals("addToOrder"))
+            {
+                cart = (ArrayList<CupCake>) session.getAttribute("cart");
+                CupCakePiece bottom = dao.getBottom(Integer.parseInt(request.getParameter("bottom")));
+                CupCakePiece topping = dao.getTopping(Integer.parseInt(request.getParameter("topping")));
+                CupCake cupcake = new CupCake(bottom, topping, Integer.parseInt(request.getParameter("amount")));
 
+                boolean contains = false;
+                for (int i = 0; i < cart.size(); i++)
+                {
+                    if (cart.get(i).equals(cupcake))
+                    {
+                        cart.get(i).addAmount(Integer.parseInt(request.getParameter("amount")));
+                        contains = true;
+                    }
+
+                }
+                if (contains == false)
+                {
+                    cart.add(cupcake);
+                    session.setAttribute("cart", cart);
+                }
+
+            } else if (request.getParameter("action") != null && request.getParameter("action").equals("checkOut"))
+            {
+                cart = (ArrayList<CupCake>) session.getAttribute("cart");
+                User user = (User) session.getAttribute("user");
+                dao.insertOrder(cart, user);
+                session.setAttribute("cart", new ArrayList<CupCake>());
+            }
+            request.setAttribute("toppings", dao.getToppings());
+            request.setAttribute("bottoms", dao.getBottoms());
+            getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
+
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -44,25 +44,30 @@ public class usersPage extends HttpServlet
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
         HttpSession s = request.getSession();
-        
-                
-        if (request.getParameter("id") != null)
+
+        if (s.getAttribute("user") == null)
         {
-            request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
-            
-            getServletContext().getRequestDispatcher("/userSpecificOrderPage.jsp").forward(request, response);
+            response.sendRedirect("index.jsp");
         } else
         {
-            
-            User user = (User)s.getAttribute("user");
-            
-            request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
-            
-            getServletContext().getRequestDispatcher("/userOrdersPage.jsp").forward(request, response);
+
+            if (request.getParameter("id") != null)
+            {
+                request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
+
+                getServletContext().getRequestDispatcher("/userSpecificOrderPage.jsp").forward(request, response);
+            } else
+            {
+
+                User user = (User) s.getAttribute("user");
+
+                request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
+
+                getServletContext().getRequestDispatcher("/userOrdersPage.jsp").forward(request, response);
+            }
+
+            //ArrayList<Order> getUsersOrders
         }
-
-        //ArrayList<Order> getUsersOrders
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
