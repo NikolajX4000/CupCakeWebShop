@@ -43,28 +43,20 @@ public class welcomePage extends HttpServlet
         DAO dao = new DAO();
         HttpSession s = request.getSession();
         
-        if (request.getParameter("action").equals("login")) {
-            User user = dao.login(request.getParameter("username"), request.getParameter("password"));
-            if (user != null) {
-                s.setAttribute("user", user);
+        User user = null;
+        
+        if(request.getParameter("action") != null){
+            if (request.getParameter("action").equals("login")) {
+                user = dao.login(request.getParameter("username"), request.getParameter("password"));
+                if (user != null) {
+                    s.setAttribute("user", user);
+                    
+                }
             }
         }
+ 
+        getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
         
-        getServletContext().getRequestDispatcher("/shop.jsp").forward(request, response);
-        
-        try (PrintWriter out = response.getWriter())
-        {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet welcomePage</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet welcomePage at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
