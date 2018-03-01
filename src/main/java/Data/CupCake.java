@@ -7,10 +7,12 @@ public class CupCake {
     private CupCakePiece bottom;
     private CupCakePiece topping;
     private double price;
+    private int amount;
 
-    public CupCake(CupCakePiece bottom, CupCakePiece topping) {
+    public CupCake(CupCakePiece bottom, CupCakePiece topping, int amount) {
         this.bottom = bottom;
         this.topping = topping;
+        this.amount = amount;
         price = this.bottom.getPrice() + this.topping.getPrice();
     }
 
@@ -57,6 +59,16 @@ public class CupCake {
             return false;
         }
         return true;
+    }
+    
+    public void addTo(int amount)
+    {
+        this.amount += amount;
+    }
+
+    public void setAmount(int amount)
+    {
+        this.amount = amount;
     }
 
 }
