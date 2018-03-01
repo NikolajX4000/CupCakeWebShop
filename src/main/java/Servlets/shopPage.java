@@ -44,7 +44,7 @@ public class shopPage extends HttpServlet
         DAO dao = new DAO();
         ArrayList<CupCakePiece> bottoms = dao.getBottoms();
         ArrayList<CupCakePiece> toppings = dao.getToppings();
-        getServletContext().getRequestDispatcher("/shop.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
         
         try (PrintWriter out = response.getWriter())
         {
