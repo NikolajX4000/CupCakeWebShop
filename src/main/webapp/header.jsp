@@ -42,7 +42,7 @@
                             <a href="shop" class="nav-link">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Help</a>
+                            <a href="logout.jsp" class="nav-link">Logout</a>
                         </li>
                     </ul>
                 </div>
