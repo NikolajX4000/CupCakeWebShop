@@ -337,16 +337,17 @@ public class DAO
         PreparedStatement stmt = null;
         try
         {
-            String sql = "SELECT * FROM orderline"
-                    + "WHERE order_id= ?"
-                    + "INNER JOIN orders"
-                    + "ON orders.id=orderline.order_id"
-                    + "INNER JOIN toppings"
-                    + "ON toppings.id=orderline.topping_id"
-                    + "INNER JOIN bottoms"
-                    + "ON bottoms.id=orderline.bottoms_id"
-                    + "INNER JOIN users"
-                    + "ON users.user_id=orders.user_id;";
+            String sql = "SELECT * "
+                    + "FROM orderline "
+                    + "INNER JOIN orders "
+                    + "ON orders.id=orderline.order_id "
+                    + "INNER JOIN toppings "
+                    + "ON toppings.id=orderline.topping_id "
+                    + "INNER JOIN bottoms "
+                    + "ON bottoms.id=orderline.bottom_id "
+                    + "INNER JOIN users "
+                    + "ON users.user_id=orders.user_id "
+                    + "WHERE order_id = ?;";
             stmt = conn.getConnection().prepareStatement(sql);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
