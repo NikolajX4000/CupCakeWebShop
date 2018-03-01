@@ -4,12 +4,20 @@
     Author     : Hupra Laptop
 --%>
 
+<%@page import="Data.Order"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="Data.User"%>
 
 <%@include file="header.jsp" %>
 
+
+<%
+     
+ArrayList<Order> orders = (ArrayList<Order>)request.getAttribute("usersOrders");
+
+%>
 
 <div class="container">
 
@@ -32,31 +40,20 @@
                 <th scope="col">Date</th>
                 </tr>
             </thead>
-            <tbody>  
-                <tr class="clickable-row" data-href='?id=1'>
-                <td>420</td>
-                <td>25 Febuaray, 16:42</td>
-                </tr>
-                <tr class="clickable-row" data-href='?id=2'>
-                <td>420</td>
-                <td>25 Febuaray, 16:42</td>
-                </tr>
-                <tr class="clickable-row" data-href='?id=3'>
-                <td>420</td>
-                <td>25 Febuaray, 16:42</td>
-                </tr>
-                <tr class="clickable-row" data-href='?id=4'>
-                <td>420</td>
-                <td>25 Febuaray, 16:42</td>
-                </tr>
-                <tr class="clickable-row" data-href='?id=5'>
-                <td>420</td>
-                <td>25 Febuaray, 16:42</td>
-                </tr>
-                <tr class="clickable-row" data-href='?id=6'>
-                <td>420</td>
-                <td>25 Febuaray, 16:42</td>
-                </tr>
+            <tbody>
+                
+                
+                <%
+                
+                for(Order o : orders){
+                    out.println("<tr class='clickable-row' data-href='?id=" + o.getId() + "'>");
+                    out.println("<td>" + o.getId() + "</td>");
+                    out.println("<td>" + o.getDateTime() + "</td>");
+                    out.println("</tr>");
+                    
+                }
+                
+                %>
             </tbody>
         </table>
     </div>

@@ -15,7 +15,7 @@
 
 <%
 
- ArrayList<OrderLine> items = (ArrayList<OrderLine>)session.getAttribute("orderDetails");
+ ArrayList<OrderLine> items = (ArrayList<OrderLine>) request.getAttribute("orderDetails");
 
 %>
 
@@ -58,8 +58,6 @@
                     price += (o.getCupCake().getPrice()*o.getCupCake().getAmount());
                     
                 }
-                
-
                 %>
                 
             </tbody>

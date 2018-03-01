@@ -6,8 +6,11 @@
 package Servlets;
 
 import DBConnection.DAO;
+import Data.Order;
+import Data.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,14 +48,20 @@ public class usersPage extends HttpServlet
                 
         if (request.getParameter("id") != null)
         {
-            s.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
+            request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
+            
             getServletContext().getRequestDispatcher("/userSpecificOrderPage.jsp").forward(request, response);
         } else
         {
+            
+            User user = (User)s.getAttribute("user");
+            
+            request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
+            
             getServletContext().getRequestDispatcher("/userOrdersPage.jsp").forward(request, response);
         }
 
-        
+        //ArrayList<Order> getUsersOrders
 
     }
 
