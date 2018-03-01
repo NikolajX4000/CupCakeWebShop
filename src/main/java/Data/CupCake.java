@@ -28,6 +28,13 @@ public class CupCake {
         return price;
     }
 
+    public int getAmount()
+    {
+        return amount;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 7;

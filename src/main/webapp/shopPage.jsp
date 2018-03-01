@@ -13,6 +13,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
     User user = (User) session.getAttribute("user");
+    
+    ArrayList<CupCake> cart = (ArrayList<CupCake>)session.getAttribute("order");
+    
     ArrayList<CupCakePiece> toppings = (ArrayList) request.getAttribute("toppings");
     ArrayList<CupCakePiece> bottoms = (ArrayList) request.getAttribute("bottoms");
 %>
@@ -33,7 +36,6 @@
                     <div class="input-group-prepend mb-3">
                         <label class="input-group-text" for="bottoms">Bottom</label>
                         <select class="custom-select" id="bottoms" name="bottom">
-                            <option selected>Choose...</option>
                             <% for (CupCakePiece cp : bottoms)
                                 { %>
                             <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor());%></option><%
@@ -43,7 +45,6 @@
                     <div class="input-group-prepend mb-3">
                         <label class="input-group-text" for="toppings">Topping</label>
                         <select class="custom-select" id="toppings" name="topping">
-                            <option selected>Choose...</option>
                             <% for (CupCakePiece cp : toppings)
                                 { %>
                             <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor());%></option><%
@@ -52,7 +53,7 @@
                     </div>
                     <div class="input-group-prepend mb-3">
                         <label class="input-group-text" for="toppings">Amount</label>
-                        <input class="form-control" type="number" min="1" max="100" name="amount">
+                        <input class="form-control" type="number" min="1" max="100" name="amount" required>
                     </div>
                     <button type="submit" class="btn btn-primary mb-3" name="action" value="addToOrder" >Add to cart</button>
                 </form>
@@ -87,6 +88,20 @@
                             <td>420</td>
                             <td>x</td>
                         </tr>
+                        
+                        
+                        <%
+                          
+                        for(CupCake c : cart){
+                            out.println("<tr>");
+                            out.println("<td>" + c.getBottom().getFlavor() + "</td>");
+                            out.println("<td>" + c.getTopping().getFlavor()+ "</td>");
+                            out.println("<td>" + c.getAmount() + "</td>");
+                            out.println("<td>" + "x" + "</td>");
+                            out.println("</tr>");
+                        }
+                        %>
+                        
                     </tbody>
                 </table>
             </div>
