@@ -39,7 +39,7 @@
                             <a href="users" class="nav-link">My Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a href="shop" class="nav-link">Shop</a>
+                            <a href="adminOrder" class="nav-link">Admin</a>
                         </li>
                         <li class="nav-item">
                             <a href="logout.jsp" class="nav-link">Logout</a>
