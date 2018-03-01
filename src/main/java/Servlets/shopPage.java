@@ -5,8 +5,11 @@
  */
 package Servlets;
 
+import DBConnection.DAO;
+import Data.CupCakePiece;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +40,12 @@ public class shopPage extends HttpServlet
             throws ServletException, IOException
     {
         response.setContentType("text/html;charset=UTF-8");
+        
+        DAO dao = new DAO();
+        ArrayList<CupCakePiece> bottoms = dao.getBottoms();
+        ArrayList<CupCakePiece> toppings = dao.getToppings();
+        getServletContext().getRequestDispatcher("/shop.jsp").forward(request, response);
+        
         try (PrintWriter out = response.getWriter())
         {
             /* TODO output your page here. You may use following sample code. */

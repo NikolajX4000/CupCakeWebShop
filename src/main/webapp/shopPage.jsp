@@ -10,11 +10,13 @@
 <%@page import="Data.CupCakePiece"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% User user = (User) session.getAttribute("user");
-    ArrayList<CupCakePiece> bottoms;
-    ArrayList<CupCakePiece> toppings;
-    DAO dao = new DAO();
-    bottoms = dao.getBottoms();
-    toppings = dao.getToppings();
+    //ArrayList<CupCakePiece> bottoms;
+    //ArrayList<CupCakePiece> toppings;
+    //DAO dao = new DAO();
+    //bottoms = dao.getBottoms();
+    //toppings = dao.getToppings();
+    ArrayList<CupCakePiece> toppings = (ArrayList) request.getAttribute("toppings");
+    ArrayList<CupCakePiece> bottoms = (ArrayList) request.getAttribute("bottoms");
 %>
 <div class="container">
     <div class="jumbotron">
