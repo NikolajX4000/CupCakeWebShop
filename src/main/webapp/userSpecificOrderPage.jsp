@@ -4,6 +4,7 @@
     Author     : Hupra Laptop
 --%>
 
+<%@page import="Data.Order"%>
 <%@page import="Data.OrderLine"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,9 +16,12 @@
 
 <%
 
- ArrayList<OrderLine> items = (ArrayList<OrderLine>) request.getAttribute("orderDetails");
+ Order order = (Order) request.getAttribute("orderDetails");
+
+ArrayList<OrderLine> items = order.getOrder();
 
 %>
+
 
 
 <div class="container">
