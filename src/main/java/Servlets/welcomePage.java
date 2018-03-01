@@ -45,18 +45,24 @@ public class welcomePage extends HttpServlet
         
         User user = null;
         
+        boolean redirectMe = false;
+        
         if(request.getParameter("action") != null){
             if (request.getParameter("action").equals("login")) {
                 user = dao.login(request.getParameter("username"), request.getParameter("password"));
                 if (user != null) {
                     s.setAttribute("user", user);
-                    response.sendRedirect("/shop");
+                    redirectMe = true;    
                 }
             }
         }
  
-        getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
-        
+        if(redirectMe){
+            response.sendRedirect("shop");
+        }else{
+            getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+        }
+ 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
