@@ -71,4 +71,10 @@ public class CupCake {
         this.amount = amount;
     }
 
+    @Override
+    public String toString()
+    {
+        return "CupCake{" + "bottom=" + bottom + ", topping=" + topping + ", price=" + price + ", amount=" + amount + '}';
+    }
+    
 }

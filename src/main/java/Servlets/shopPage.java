@@ -6,6 +6,7 @@
 package Servlets;
 
 import DBConnection.DAO;
+import Data.CupCake;
 import Data.CupCakePiece;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -40,12 +42,29 @@ public class shopPage extends HttpServlet
             throws ServletException, IOException
     {
         response.setContentType("text/html;charset=UTF-8");
-
         DAO dao = new DAO();
+
+        HttpSession s = request.getSession();
+        ArrayList<CupCake> order = new ArrayList();
+
+        if (s.getAttribute("order") == null)
+        {
+            s.setAttribute("order", order);
+        }
+
+        if (request.getParameter("action").equals("addToOrder"))
+        {
+            order = (ArrayList<CupCake>) s.getAttribute("order");
+            CupCakePiece bottom = dao.getBottom((int)request.getAttribute("bottom"));
+            CupCakePiece topping = dao.getBottom((int)request.getAttribute("topping")); 
+            CupCake cupcake = new CupCake(bottom, topping, (int) request.getAttribute("amount"));
+            order.add(cupcake);
+            s.setAttribute("order", order);
+
+        }
         request.setAttribute("toppings", dao.getToppings());
         request.setAttribute("bottoms", dao.getBottoms());
         getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
-
 
     }
 

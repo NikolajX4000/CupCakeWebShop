@@ -10,7 +10,6 @@
 <%@page import="Data.CupCakePiece"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% User user = (User) session.getAttribute("user");
-
     ArrayList<CupCakePiece> toppings = (ArrayList) request.getAttribute("toppings");
     ArrayList<CupCakePiece> bottoms = (ArrayList) request.getAttribute("bottoms");
 %>
@@ -31,7 +30,7 @@
                     <p>Add cupcakes to your cart!</p>
                     <div class="input-group-prepend mb-3">
                         <label class="input-group-text" for="bottoms">Bottom</label>
-                        <select class="custom-select" id="bottoms">
+                        <select class="custom-select" id="bottoms" name="bottom">
                             <option selected>Choose...</option>
                             <% for (CupCakePiece cp : bottoms) { %>
                             <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor());%></option><%
@@ -40,7 +39,7 @@
                     </div>
                     <div class="input-group-prepend mb-3">
                         <label class="input-group-text" for="toppings">Topping</label>
-                        <select class="custom-select" id="toppings">
+                        <select class="custom-select" id="toppings" name="topping">
                             <option selected>Choose...</option>
                             <% for (CupCakePiece cp : toppings) { %>
                             <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor());%></option><%

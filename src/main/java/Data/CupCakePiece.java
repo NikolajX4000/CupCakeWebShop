@@ -1,5 +1,7 @@
 package Data;
 
+import DBConnection.DAO;
+
 public class CupCakePiece{
 
     private int id;
