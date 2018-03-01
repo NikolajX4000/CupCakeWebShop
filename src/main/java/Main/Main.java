@@ -19,6 +19,6 @@ public class Main
     {
         DAO dao = new DAO();
         
-        System.out.println(dao.getUserById(7));
+        System.out.println(dao.withdrawal(1, 46));
     }
 }

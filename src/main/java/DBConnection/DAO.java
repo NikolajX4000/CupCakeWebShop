@@ -43,6 +43,35 @@ public class DAO {
         }
         return res;
     }
+    
+    public User getUser(int id) {
+        PreparedStatement stmt = null;
+        User res = null;
+        try {
+            String sql = "SELECT * FROM users WHERE user_id = ?";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.first()) {
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                double balance = rs.getDouble("balance");
+                String role = rs.getString("role");
+                res = new User(id, username, password, balance, role);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return res;
+    }
 
     public ArrayList<User> getUsers() {
         PreparedStatement stmt = null;
@@ -502,6 +531,61 @@ public class DAO {
                 }
             }
         return username;   
+    }
+    
+    public double deposit(int id, double value) {
+        PreparedStatement stmt = null;
+        double balance = 0;
+            try {
+                String sql = "UPDATE users SET balance=? WHERE user_id= ?;";
+                stmt = conn.getConnection().prepareStatement(sql);
+                balance = getUser(id).getBalance() + value;
+                stmt.setDouble(1, balance);
+                stmt.setInt(2, id);
+                stmt.executeUpdate();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        return balance;  
+    }
+    
+    public boolean withdrawal(int id, double value) {
+        PreparedStatement stmt = null;
+        double balance = getUser(id).getBalance();
+        
+        boolean succes = false;
+         
+        if (balance - value < 0) return false;
+        
+            try {
+                String sql = "UPDATE users SET balance=? WHERE user_id= ?;";
+                stmt = conn.getConnection().prepareStatement(sql);
+                balance = getUser(id).getBalance() - value;
+                stmt.setDouble(1, balance);
+                stmt.setInt(2, id);
+                succes = stmt.executeUpdate() == 1;
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        return succes;  
     }
     
 }
