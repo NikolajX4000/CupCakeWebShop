@@ -46,22 +46,36 @@ public class shopPage extends HttpServlet
         DAO dao = new DAO();
 
         HttpSession s = request.getSession();
-        ArrayList<CupCake> order;
+        ArrayList<CupCake> cart;
 
-        if (s.getAttribute("order") == null)
+        if (s.getAttribute("cart") == null)
         {
-            order = new ArrayList();
-            s.setAttribute("order", order);
+            cart = new ArrayList();
+            s.setAttribute("cart", cart);
         }
 
         if (request.getParameter("action") != null && request.getParameter("action").equals("addToOrder"))
         {
-            order = (ArrayList<CupCake>) s.getAttribute("order");         
+            cart = (ArrayList<CupCake>) s.getAttribute("cart");
             CupCakePiece bottom = dao.getBottom(Integer.parseInt(request.getParameter("bottom")));
-            CupCakePiece topping = dao.getTopping(Integer.parseInt(request.getParameter("topping"))); 
+            CupCakePiece topping = dao.getTopping(Integer.parseInt(request.getParameter("topping")));
             CupCake cupcake = new CupCake(bottom, topping, Integer.parseInt(request.getParameter("amount")));
-            order.add(cupcake);
-            s.setAttribute("order", order);
+
+            boolean contains = false;
+            for (int i = 0; i < cart.size(); i++)
+            {
+                if (cart.get(i).equals(cupcake))
+                {
+                    cart.get(i).addAmount(Integer.parseInt(request.getParameter("amount")));
+                    contains = true;
+                }
+
+            }
+            if (contains == false)
+            {
+                cart.add(cupcake);
+                s.setAttribute("cart", cart);
+            }
 
         }
         request.setAttribute("toppings", dao.getToppings());

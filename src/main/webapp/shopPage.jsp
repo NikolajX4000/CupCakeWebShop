@@ -14,7 +14,7 @@
 <% 
     User user = (User) session.getAttribute("user");
     
-    ArrayList<CupCake> cart = (ArrayList<CupCake>)session.getAttribute("order");
+    ArrayList<CupCake> cart = (ArrayList<CupCake>)session.getAttribute("cart");
     
     ArrayList<CupCakePiece> toppings = (ArrayList) request.getAttribute("toppings");
     ArrayList<CupCakePiece> bottoms = (ArrayList) request.getAttribute("bottoms");

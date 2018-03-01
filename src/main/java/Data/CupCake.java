@@ -32,43 +32,48 @@ public class CupCake {
     {
         return amount;
     }
-    
-    
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.bottom);
-        hash = 47 * hash + Objects.hashCode(this.topping);
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.price) ^ (Double.doubleToLongBits(this.price) >>> 32));
+    public int hashCode()
+    {
+        int hash = 3;
+        hash = 61 * hash + Objects.hashCode(this.bottom);
+        hash = 61 * hash + Objects.hashCode(this.topping);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final CupCake other = (CupCake) obj;
-        if (Double.doubleToLongBits(this.price) != Double.doubleToLongBits(other.price)) {
+        if (!Objects.equals(this.bottom, other.bottom))
+        {
             return false;
         }
-        if (!Objects.equals(this.bottom, other.bottom)) {
-            return false;
-        }
-        if (!Objects.equals(this.topping, other.topping)) {
+        if (!Objects.equals(this.topping, other.topping))
+        {
             return false;
         }
         return true;
     }
     
-    public void addTo(int amount)
+    
+
+    
+    
+    public void addAmount(int amount)
     {
         this.amount += amount;
     }
