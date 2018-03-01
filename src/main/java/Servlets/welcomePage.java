@@ -5,6 +5,8 @@
  */
 package Servlets;
 
+import DBConnection.DAO;
+import Data.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,6 +40,18 @@ public class welcomePage extends HttpServlet
             throws ServletException, IOException
     {
         response.setContentType("text/html;charset=UTF-8");
+        DAO dao = new DAO();
+        HttpSession s = request.getSession();
+        
+        if (request.getParameter("action").equals("login")) {
+            User user = dao.login(request.getParameter("username"), request.getParameter("password"));
+            if (user != null) {
+                s.setAttribute("user", user);
+            }
+        }
+        
+        getServletContext().getRequestDispatcher("/shop.jsp").forward(request, response);
+        
         try (PrintWriter out = response.getWriter())
         {
             /* TODO output your page here. You may use following sample code. */
