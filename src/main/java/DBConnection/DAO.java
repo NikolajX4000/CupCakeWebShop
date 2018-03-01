@@ -452,4 +452,56 @@ public class DAO {
         return success;
     }
     
+    public boolean changeOrderlineAmount(int id, int amount) {
+     PreparedStatement stmt = null;
+        boolean success = false;
+            try {
+                String sql = "UPDATE orderline SET amount= ? WHERE id= ?;";
+                stmt = conn.getConnection().prepareStatement(sql);
+                stmt.setInt(1, amount);
+                stmt.setInt(2, id);
+                success = stmt.executeUpdate() == 1;
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        return success;   
+    }
+    
+    public String getUserById(int id) {
+        PreparedStatement stmt = null;
+        String username = null;
+            try {
+                String sql = "SELECT * FROM users WHERE user_id= ?;";
+                stmt = conn.getConnection().prepareStatement(sql);
+                stmt.setInt(1, id);
+                stmt.executeQuery();
+                
+                ResultSet rs = stmt.executeQuery();
+                if (rs.first()) {
+                    username = rs.getString("username");
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        return username;   
+    }
+    
 }
