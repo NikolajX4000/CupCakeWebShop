@@ -27,7 +27,7 @@ public class Order {
 
     private void setPrice() {
         for (OrderLine ol : order) {
-            totalPrice += ol.getPrice();
+            totalPrice += ol.getCupCake().getPrice();
         }
     }
 

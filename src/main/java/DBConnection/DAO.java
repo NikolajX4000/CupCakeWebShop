@@ -277,7 +277,6 @@ public class DAO {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                String username = rs.getString("username");
                 int userId = rs.getInt("user_id");
                 int orderId = rs.getInt("order_id");
                 int orderlineId = rs.getInt("orderline.id");
@@ -285,8 +284,7 @@ public class DAO {
                 CupCakePiece bottom = new CupCakePiece(rs.getInt("bottoms.id"), rs.getString("bottom"), rs.getDouble("bottoms.price"));
                 double price = rs.getDouble("orderline.price");
                 int amount = rs.getInt("amount");
-                String dateTime = rs.getString("date");
-                order.add(new OrderLine(username, userId, orderId, orderlineId, topping, bottom, price, amount, dateTime));
+                order.add(new OrderLine(userId, orderId, orderlineId, topping, bottom, price, amount));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);

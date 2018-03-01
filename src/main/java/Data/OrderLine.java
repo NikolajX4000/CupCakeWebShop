@@ -13,37 +13,18 @@ import java.util.Objects;
  */
 public class OrderLine
 {
-    private String username;
     private int userId;
     private int orderId;
     private int orderlineId;
-    private CupCakePiece topping;
-    private CupCakePiece bottom;
-    private double price;
-    private int amount;
-    private String dateTime;
+    private CupCake cupCake;
 
-    public OrderLine(String username, int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount, String dateTime)
+
+    public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
     {
-        this.username = username;
         this.userId = userId;
         this.orderId = orderId;
         this.orderlineId = orderlineId;
-        this.topping = topping;
-        this.bottom = bottom;
-        this.price = price;
-        this.amount = amount;
-        this.dateTime = dateTime;
-    }
-
-    public String getDateTime()
-    {
-        return dateTime;
-    }
-
-    public String getUsername()
-    {
-        return username;
+        this.cupCake = new CupCake(topping, bottom, amount);
     }
 
     public int getUserId()
@@ -61,45 +42,26 @@ public class OrderLine
         return orderlineId;
     }
 
-    public CupCakePiece getTopping()
-    {
-        return topping;
-    }
-
-    public CupCakePiece getBottom()
-    {
-        return bottom;
-    }
-
-    public double getPrice()
-    {
-        return price;
-    }
-
-    public int getAmount()
-    {
-        return amount;
+    public CupCake getCupCake() {
+        return cupCake;
     }
 
     @Override
     public String toString()
     {
-        return "OrderLine" + "topping=" + topping + ", bottom=" + bottom + ", price=" + price + ", amount=" + amount;
+        return "OrderLine" + "topping=" + cupCake.getTopping() + ", bottom=" + cupCake.getBottom() + ", price=" + cupCake.getPrice() + ", amount=" + cupCake.getAmount();
     }
 
     @Override
-    public int hashCode()
-    {
-        int hash = 5;
-        hash = 79 * hash + this.orderlineId;
-        hash = 79 * hash + Objects.hashCode(this.topping);
-        hash = 79 * hash + Objects.hashCode(this.bottom);
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + this.orderlineId;
+        hash = 67 * hash + Objects.hashCode(this.cupCake);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
+    public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
@@ -113,14 +75,12 @@ public class OrderLine
         if (this.orderlineId != other.orderlineId) {
             return false;
         }
-        if (!Objects.equals(this.topping, other.topping)) {
-            return false;
-        }
-        if (!Objects.equals(this.bottom, other.bottom)) {
+        if (!Objects.equals(this.cupCake, other.cupCake)) {
             return false;
         }
         return true;
     }
+
     
 }
 
