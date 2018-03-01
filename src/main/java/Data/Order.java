@@ -12,18 +12,27 @@ import java.util.ArrayList;
  * @author Stephan
  */
 public class Order {
+
+    int id;
     ArrayList<OrderLine> order;
     double totalPrice;
+    String dateTime;
 
-    public Order(ArrayList<OrderLine> order) {
+    public Order(int id, ArrayList<OrderLine> order, String date) {
+        this.id = id;
         this.order = order;
+        dateTime = date;
         setPrice();
     }
-    
+
     private void setPrice() {
         for (OrderLine ol : order) {
             totalPrice += ol.getPrice();
         }
+    }
+
+    public int getId() {
+        return id;
     }
 
     public ArrayList<OrderLine> getOrder() {
@@ -33,5 +42,9 @@ public class Order {
     public double getTotalPrice() {
         return totalPrice;
     }
-    
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
 }

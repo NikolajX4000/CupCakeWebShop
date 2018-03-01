@@ -301,4 +301,33 @@ public class DAO {
         }
         return order;
     }
+    
+    public ArrayList<Order> getUsersOrders(int id){
+        ArrayList<Order> orders = new ArrayList();
+        PreparedStatement stmt = null;
+        try {
+            String sql = "SELECT * "
+                    + "FROM orders "
+                    + "WHERE user_id = ?;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                int orderId = rs.getInt("id");
+                String dateTime = rs.getString("date");
+                orders.add(new Order(id,getOrder(orderId), dateTime));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return orders;
+    }
 }
