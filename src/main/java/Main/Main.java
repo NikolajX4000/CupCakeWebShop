@@ -21,6 +21,5 @@ public class Main
         for (OrderLine ol : dao.getOrder(1).getOrder()) {
             System.out.println(ol);
         }
-        
     }
 }
