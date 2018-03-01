@@ -11,11 +11,11 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Data.CupCakePiece"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% 
+<%
     User user = (User) session.getAttribute("user");
-    
-    ArrayList<CupCake> cart = (ArrayList<CupCake>)session.getAttribute("cart");
-    
+
+    ArrayList<CupCake> cart = (ArrayList<CupCake>) session.getAttribute("cart");
+
     ArrayList<CupCakePiece> toppings = (ArrayList) request.getAttribute("toppings");
     ArrayList<CupCakePiece> bottoms = (ArrayList) request.getAttribute("bottoms");
 %>
@@ -57,6 +57,9 @@
                     </div>
                     <button type="submit" class="btn btn-primary mb-3" name="action" value="addToOrder" >Add to cart</button>
                 </form>
+                <form class="mb-2" name="create_form" method="post">
+                    <button type="submit" class="btn btn-primary mb-3" name="action" value="checkOut" >Check out</button>
+                </form>
             </div>
             <div class="col-12 col-md-5">
                 <p>Shopping Cart</p>
@@ -88,20 +91,21 @@
                             <td>420</td>
                             <td>x</td>
                         </tr>
-                        
-                        
+
+
                         <%
-                          
-                        for(CupCake c : cart){
-                            out.println("<tr>");
-                            out.println("<td>" + c.getBottom().getFlavor() + "</td>");
-                            out.println("<td>" + c.getTopping().getFlavor()+ "</td>");
-                            out.println("<td>" + c.getAmount() + "</td>");
-                            out.println("<td>" + "x" + "</td>");
-                            out.println("</tr>");
-                        }
+
+                            for (CupCake c : cart)
+                            {
+                                out.println("<tr>");
+                                out.println("<td>" + c.getBottom().getFlavor() + "</td>");
+                                out.println("<td>" + c.getTopping().getFlavor() + "</td>");
+                                out.println("<td>" + c.getAmount() + "</td>");
+                                out.println("<td>" + "x" + "</td>");
+                                out.println("</tr>");
+                            }
                         %>
-                        
+
                     </tbody>
                 </table>
             </div>

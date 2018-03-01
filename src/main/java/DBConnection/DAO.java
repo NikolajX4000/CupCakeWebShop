@@ -5,6 +5,7 @@ import Data.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -332,5 +333,77 @@ public class DAO {
             }
         }
         return orders;
+    }
+    
+    public ArrayList<Order> getAllOrders(int id){
+        ArrayList<Order> orders = new ArrayList();
+        PreparedStatement stmt = null;
+        try {
+            String sql = "SELECT * "
+                    + "FROM orders;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                int orderId = rs.getInt("id");
+                String dateTime = rs.getString("date");
+                orders.add(new Order(id,getOrder(orderId), dateTime));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return orders;
+    }
+    public void insertOrder(ArrayList<CupCake> cart, User user)
+    {
+        PreparedStatement stmt = null;
+        int lastId = 0;
+        try
+        {
+            String sql = "insert into orders (user_id) values (?)";
+            stmt = conn.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, user.getId());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            if (rs.first())
+            {
+                lastId = rs.getInt(1);
+            }
+            sql = "insert into orderline (topping_id, bottom_id, order_id, price, amount) values (?, ?, ?, ?, ?)";
+            stmt = conn.getConnection().prepareStatement(sql);
+            for (CupCake c : cart)
+            {
+                stmt.setInt(1, c.getTopping().getId());
+                stmt.setInt(2, c.getBottom().getId());
+                stmt.setInt(3, lastId);
+                stmt.setDouble(4, c.getPrice());
+                stmt.setInt(5, c.getAmount());
+                stmt.executeUpdate();
+            }
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }
 }
