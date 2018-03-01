@@ -18,8 +18,7 @@ public class Main
     {
         DAO dao = new DAO();
         
-        
-        for (OrderLine ol : dao.getOrder(1)) {
+        for (OrderLine ol : dao.getOrder(1).getOrder()) {
             System.out.println(ol);
         }
         

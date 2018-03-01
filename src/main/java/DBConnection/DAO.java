@@ -258,9 +258,11 @@ public class DAO {
         return user;
     }
 
-    public ArrayList<OrderLine> getOrder(int id) {
-        ArrayList<OrderLine> order = new ArrayList();
+    public Order getOrder(int id) {
+        ArrayList<OrderLine> orderlines = new ArrayList();
         PreparedStatement stmt = null;
+        Order order = null;
+        String dateTime = null;
         try {
             String sql = "SELECT * "
                     + "FROM orderline "
@@ -284,8 +286,11 @@ public class DAO {
                 CupCakePiece bottom = new CupCakePiece(rs.getInt("bottoms.id"), rs.getString("bottom"), rs.getDouble("bottoms.price"));
                 double price = rs.getDouble("orderline.price");
                 int amount = rs.getInt("amount");
-                order.add(new OrderLine(userId, orderId, orderlineId, topping, bottom, price, amount));
+                dateTime = rs.getString("orders.date");
+                orderlines.add(new OrderLine(userId, orderId, orderlineId, topping, bottom, price, amount));
             }
+            order = new Order(id, orderlines, dateTime);
+            
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -313,7 +318,7 @@ public class DAO {
             while (rs.next()) {
                 int orderId = rs.getInt("id");
                 String dateTime = rs.getString("date");
-                orders.add(new Order(id,getOrder(orderId), dateTime));
+                orders.add(new Order(id,getOrder(orderId).getOrder(), dateTime));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
