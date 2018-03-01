@@ -14,19 +14,24 @@
 
 
 <%
-     
+User user = (User) session.getAttribute("user");
 ArrayList<Order> orders = (ArrayList<Order>)request.getAttribute("usersOrders");
 
 %>
+
+
+
 
 <div class="container">
 
     <div class="jumbotron">
 
 
-        <h1 class="display-4">Hello Daniel!</h1>
+        <h1 class="display-4">Hello <% out.print(user.getUsername()); %>!</h1>
 
-        <h3>Balance: 45$</h3>
+        <h3>Balance: <% out.print(user.getBalance()); %>$</h3>
+
+        <hr>
 
         <p class="lead">Below you can see all your orders. Click on them to get the invoice of that order!</p>
 

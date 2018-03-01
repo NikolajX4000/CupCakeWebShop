@@ -16,7 +16,9 @@
 
 <%
 
- Order order = (Order) request.getAttribute("orderDetails");
+User user = (User) session.getAttribute("user");
+    
+Order order = (Order) request.getAttribute("orderDetails");
 
 ArrayList<OrderLine> items = order.getOrder();
 
@@ -29,13 +31,13 @@ ArrayList<OrderLine> items = order.getOrder();
     <div class="jumbotron">
 
 
-        <h1 class="display-4">Hello Daniel!</h1>
+        <h1 class="display-4">Hello <% out.print(user.getUsername()); %>!</h1>
 
-        <h3>Balance: 45$</h3>
+        <h3>Balance: <% out.print(user.getBalance()); %>$</h3>
 
         <hr>
 
-        <p>Your Ordernumber: <% out.print(items.get(0).getOrderId()); %></p>
+        <p>Your Ordernumber: <% out.print(order.getId()); %></p>
         <table class="table table-striped" style="background-color: white;">
             <thead>
                 <tr >
