@@ -406,5 +406,50 @@ public class DAO {
         }
     }
     
-
+    public boolean addTopping(String flavor, double price) {
+        PreparedStatement stmt = null;
+        boolean success = false;
+            try {
+                String sql = "INSERT INTO toppings (topping, price) VALUES (?, ?);";
+                stmt = conn.getConnection().prepareStatement(sql);
+                stmt.setString(1, flavor);
+                stmt.setDouble(2, price);
+                success = stmt.executeUpdate() == 1;
+            } catch (SQLException ex) {
+                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        return success;
+    }
+    
+    public boolean addBottom(String flavor, double price) {
+        PreparedStatement stmt = null;
+        boolean success = false;
+            try {
+                String sql = "INSERT INTO bottoms (bottom, price) VALUES (?, ?);";
+                stmt = conn.getConnection().prepareStatement(sql);
+                stmt.setString(1, flavor);
+                stmt.setDouble(2, price);
+                success = stmt.executeUpdate() == 1;
+            } catch (SQLException ex) {
+                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        return success;
+    }
+    
 }

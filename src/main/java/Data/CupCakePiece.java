@@ -27,6 +27,11 @@ public class CupCakePiece{
     }
 
     @Override
+    public String toString() {
+        return "CupCakePiece{" + "id=" + id + ", flavor=" + flavor + ", price=" + price + '}';
+    }
+
+    @Override
     public int hashCode()
     {
         int hash = 5;

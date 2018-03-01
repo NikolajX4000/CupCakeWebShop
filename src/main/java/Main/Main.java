@@ -6,6 +6,7 @@
 package Main;
 
 import DBConnection.DAO;
+import Data.CupCakePiece;
 import Data.OrderLine;
 
 /**
@@ -18,8 +19,6 @@ public class Main
     {
         DAO dao = new DAO();
         
-        for (OrderLine ol : dao.getOrder(1).getOrder()) {
-            System.out.println(ol);
-        }
+        
     }
 }
