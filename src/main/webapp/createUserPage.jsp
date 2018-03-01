@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1 class="display-4">Welcome to Cupcakes!</h1>
         <p class="lead">Create a user to start ordering cupcakes today!</p>
-        <form class="mb-2" name="create_form" action="loginRegi" method="post">
+        <form class="mb-2" name="create_form" method="post">
             <div class="form-row mb-2">
                 <div class="col-12 col-md-6 col-lg-4">
                     <p>Username</p>
@@ -23,7 +23,7 @@
             <button type="submit" class="btn btn-primary" name="action" value="register">Sign up</button>
 
         </form>
-        <a class="" href="index.jsp" role="button">Already have an account? click here to log in.</a>
+        <a class="" href="welcome" role="button">Already have an account? click here to log in.</a>
     </div>
 </div>
 <%@include file="footer.jsp" %>

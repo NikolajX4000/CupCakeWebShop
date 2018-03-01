@@ -42,27 +42,49 @@ public class welcomePage extends HttpServlet
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
         HttpSession s = request.getSession();
-        
+
         User user = null;
-        
+
         boolean redirectMe = false;
-        
-        if(request.getParameter("action") != null){
-            if (request.getParameter("action").equals("login")) {
+
+        if (request.getParameter("action") != null)
+        {
+            if (request.getParameter("action").equals("login"))
+            {
                 user = dao.login(request.getParameter("username"), request.getParameter("password"));
-                if (user != null) {
+                if (user != null)
+                {
                     s.setAttribute("user", user);
-                    redirectMe = true;    
+                    redirectMe = true;
+                }
+            }
+            if (request.getParameter("action").equals("register"))
+            {
+                boolean createdUser = dao.createCustomer(request.getParameter("username"), request.getParameter("password"), request.getParameter("password2"));
+                if (!createdUser)
+                {
+                    response.sendRedirect("createUserPage.jsp");
                 }
             }
         }
- 
-        if(redirectMe){
+
+        if (redirectMe)
+        {
             response.sendRedirect("shop");
-        }else{
-            getServletContext().getRequestDispatcher("/loginPage.jsp").forward(request, response);
+        } else
+        {
+
+            //if(request.getReq("p") != null && request.getAttribute("p").equals("register")){
+            if (request.getParameter("p") != null && request.getParameter("p").equals("register"))
+            {
+                getServletContext().getRequestDispatcher("/createUserPage.jsp").forward(request, response);
+            } else
+            {
+                getServletContext().getRequestDispatcher("/loginPage.jsp").forward(request, response);
+            }
+
         }
- 
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

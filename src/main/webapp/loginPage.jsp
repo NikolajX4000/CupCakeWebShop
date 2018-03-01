@@ -10,6 +10,9 @@
 
 <%@include file="header.jsp" %>
 
+
+<% // out.print(session.getAttribute("test"));%>
+
 <div class="container">
     <div class="jumbotron">
         <h1 class="display-4">Welcome to Cupcakes!</h1>
@@ -28,7 +31,7 @@
                 </div>
             <button type="submit" class="btn btn-primary" name="action" value="login">Sign in</button>
             </form>
-            <a class="" href="register" role="button">No account? click here to register.</a>
+            <a class="" href="?p=register" role="button">No account? click here to register.</a>
             
     </div>
 </div>
