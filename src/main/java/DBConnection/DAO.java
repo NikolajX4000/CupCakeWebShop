@@ -361,7 +361,8 @@ public class DAO
                 CupCakePiece bottom = new CupCakePiece(rs.getInt("bottoms.id"), rs.getString("bottom"), rs.getDouble("bottoms.price"));
                 double price = rs.getDouble("orderline.price");
                 int amount = rs.getInt("amount");
-                order.add(new OrderLine(username, userId, orderId , orderlineId, topping, bottom, price, amount));
+                String dateTime = rs.getString("date");
+                order.add(new OrderLine(username, userId, orderId , orderlineId, topping, bottom, price, amount, dateTime));
             }
         } catch (SQLException ex)
         {
@@ -381,4 +382,5 @@ public class DAO
         }
         return order;
     }
+    
 }

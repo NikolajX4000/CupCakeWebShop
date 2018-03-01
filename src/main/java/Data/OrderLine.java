@@ -21,8 +21,9 @@ public class OrderLine
     private CupCakePiece bottom;
     private double price;
     private int amount;
+    private String dateTime;
 
-    public OrderLine(String username, int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
+    public OrderLine(String username, int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount, String dateTime)
     {
         this.username = username;
         this.userId = userId;
@@ -32,6 +33,12 @@ public class OrderLine
         this.bottom = bottom;
         this.price = price;
         this.amount = amount;
+        this.dateTime = dateTime;
+    }
+
+    public String getDateTime()
+    {
+        return dateTime;
     }
 
     public String getUsername()
