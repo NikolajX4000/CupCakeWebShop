@@ -26,6 +26,7 @@ ArrayList<Order> orders = (ArrayList<Order>)request.getAttribute("allOrders");
 
     <div class="jumbotron">
 
+        <a href="createPiece">create new topping/bottom</a>
 
         <h1 class="display-4">Hello <% out.print(user.getUsername()); %>!</h1>
 

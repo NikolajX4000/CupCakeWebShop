@@ -8,7 +8,6 @@ package Servlets;
 import DBConnection.DAO;
 import Data.User;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,15 +48,29 @@ public class createPiece extends HttpServlet
             } else
             {
                 
-                //code for site here
-                
-                getServletContext().getRequestDispatcher("/createPiece.jsp").forward(request, response);
-                
-                
+                if (request.getParameter("action") != null)
+                {
+                    if (request.getParameter("action").equals("newPiece"))
+                    {
+
+                        String name = (String)request.getParameter("name");
+                        double price = (double)Integer.parseInt(request.getParameter("price"));
+                        String type = (String)request.getParameter("type");
+                        
+                        if(type.equals("bottom")){
+                            dao.addBottom(name, price);
+                        }else if(type.equals("topping")){
+                            dao.addTopping(name, price);
+                        }
+                   }
+                }
+                    
+                getServletContext().getRequestDispatcher("/createPiece.jsp").forward(request, response); 
+                    
+                }
             }
         }
         
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
