@@ -19,7 +19,7 @@ public class OrderLine
     private CupCake cupCake;
 
 
-    public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
+    public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece bottom, CupCakePiece topping, double price, int amount)
     {
         this.userId = userId;
         this.orderId = orderId;
