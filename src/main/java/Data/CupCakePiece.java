@@ -1,6 +1,8 @@
 package Data;
 
-public class CupCakePiece {
+import DBConnection.DAO;
+
+public class CupCakePiece{
 
     private int id;
     private String flavor;
@@ -30,27 +32,34 @@ public class CupCakePiece {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 5;
         hash = 79 * hash + this.id;
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final CupCakePiece other = (CupCakePiece) obj;
-        if (this.id != other.id) {
+        if (this.id != other.id)
+        {
             return false;
         }
         return true;
     }
+
 }
