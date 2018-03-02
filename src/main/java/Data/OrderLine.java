@@ -1,44 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Data;
 
 import java.util.Objects;
 
-/**
- *
- * @author Stephan
- */
-public class OrderLine
-{
+public class OrderLine {
+
     private int userId;
     private int orderId;
     private int orderlineId;
     private CupCake cupCake;
 
 
+
     public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece bottom, CupCakePiece topping, double price, int amount)
     {
+   
         this.userId = userId;
         this.orderId = orderId;
         this.orderlineId = orderlineId;
-        this.cupCake = new CupCake(topping, bottom, amount);
+        this.cupCake = new CupCake(bottom, topping, amount);
     }
 
-    public int getUserId()
-    {
+    public int getUserId() {
         return userId;
     }
 
-    public int getOrderId()
-    {
+    public int getOrderId() {
         return orderId;
     }
 
-    public int getOrderlineId()
-    {
+    public int getOrderlineId() {
         return orderlineId;
     }
 
@@ -47,8 +37,7 @@ public class OrderLine
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "OrderLine" + "topping=" + cupCake.getTopping() + ", bottom=" + cupCake.getBottom() + ", price=" + cupCake.getPrice() + ", amount=" + cupCake.getAmount();
     }
 
@@ -80,9 +69,4 @@ public class OrderLine
         }
         return true;
     }
-
-    
 }
-
-
-
