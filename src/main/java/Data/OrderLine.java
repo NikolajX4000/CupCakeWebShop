@@ -24,7 +24,7 @@ public class OrderLine
         this.userId = userId;
         this.orderId = orderId;
         this.orderlineId = orderlineId;
-        this.cupCake = new CupCake(topping, bottom, amount);
+        this.cupCake = new CupCake(bottom, topping, amount);
     }
 
     public int getUserId()
