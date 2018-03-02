@@ -86,7 +86,6 @@
                     <%//out.println("<td>" + c.getAmount() + "</td>");
                             out.println("<td>" + "x" + "</td>");
                             out.println("</tr>");
-                            i++;
                         }
                     %>
                     </tbody>

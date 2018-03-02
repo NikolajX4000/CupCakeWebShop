@@ -58,7 +58,7 @@ public class shopPage extends HttpServlet
 
             if (session.getAttribute("cart") == null)
             {
-                cart = new ArrayList();
+                cart = new ArrayList<>();
                 session.setAttribute("cart", cart);
             }
 
@@ -74,7 +74,7 @@ public class shopPage extends HttpServlet
                 {
                     if (cart.get(i).equals(cupcake))
                     {
-                        cart.get(i).addAmount(Integer.parseInt(request.getParameter("amount")));
+                        cart.get(i).addAmount(cupcake.getAmount());
                         contains = true;
                     }
 
