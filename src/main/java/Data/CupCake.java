@@ -28,14 +28,12 @@ public class CupCake {
         return price;
     }
 
-    public int getAmount()
-    {
+    public int getAmount() {
         return amount;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 3;
         hash = 61 * hash + Objects.hashCode(this.bottom);
         hash = 61 * hash + Objects.hashCode(this.topping);
@@ -43,50 +41,36 @@ public class CupCake {
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (obj == null)
-        {
+        if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass())
-        {
+        if (getClass() != obj.getClass()) {
             return false;
         }
         final CupCake other = (CupCake) obj;
-        if (!Objects.equals(this.bottom, other.bottom))
-        {
+        if (!Objects.equals(this.bottom, other.bottom)) {
             return false;
         }
-        if (!Objects.equals(this.topping, other.topping))
-        {
+        if (!Objects.equals(this.topping, other.topping)) {
             return false;
         }
         return true;
     }
-    
-    
 
-    
-    
-    public void addAmount(int amount)
-    {
+    public void addAmount(int amount) {
         this.amount += amount;
     }
 
-    public void setAmount(int amount)
-    {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "CupCake{" + "bottom=" + bottom + ", topping=" + topping + ", price=" + price + ", amount=" + amount + '}';
     }
-    
 }
