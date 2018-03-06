@@ -113,10 +113,26 @@ public class shopPage extends HttpServlet
 
     private void updateCart(HttpServletRequest request)
     {
+        int amount = 0;
         ArrayList<CupCake> cart = (ArrayList<CupCake>) session.getAttribute("cart");
         for (int i = 0; i < cart.size(); i++)
         {
-            cart.get(i).setAmount(Integer.parseInt(request.getParameter(Integer.toString(i))));
+            amount = Integer.parseInt(request.getParameter(Integer.toString(i)));
+            if (amount == 0)
+            {
+                cart.set(i, null);
+            } else
+            {
+                cart.get(i).setAmount(amount);
+            }
+        }
+        for (int i = 0; i < cart.size(); i++)
+        {
+            if (cart.get(i) == null)
+            {
+                cart.remove(i);
+                i--;
+            }
         }
     }
 
