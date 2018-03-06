@@ -741,4 +741,33 @@ public class DAO
         return succes;
     }
 
+    public void updateOrderLine(int orderlineId, int amount)
+    {
+        PreparedStatement stmt = null;
+        try
+        {
+            String sql = "UPDATE `CupCakeWebShop`.`orderline` SET `amount`=? WHERE `id`=?;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setInt(1, amount);
+            stmt.setInt(2, orderlineId);
+            stmt.executeUpdate();
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+
 }

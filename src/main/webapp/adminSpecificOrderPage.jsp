@@ -15,12 +15,11 @@
 
 
 <%
+    User user = (User) session.getAttribute("user");
 
-User user = (User) session.getAttribute("user");
-    
-Order order = (Order) request.getAttribute("orderDetails");
+    Order order = (Order) request.getAttribute("orderDetails");
 
-ArrayList<OrderLine> items = order.getOrder();
+    ArrayList<OrderLine> items = order.getOrder();
 
 %>
 
@@ -38,42 +37,49 @@ ArrayList<OrderLine> items = order.getOrder();
         <hr>
 
         <p>Currently inspecting order: <% out.print(order.getId()); %></p>
-        <p>Ordered by user_id: <% out.print(order.getOrder().get(0).getUserId()) ; %></p>
-        <table class="table table-striped" style="background-color: white;">
-            <thead>
-                <tr >
-                <th scope="col">Amount</th>
-                <th scope="col">Bottom</th>
-                <th scope="col">Topping</th>
-                <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-                
+        <p>Ordered by user_id: <% out.print(order.getOrder().get(0).getUserId()); %></p>
+        <form class="mb-2" name="update_form" action="updateInvoice" method="get">
+            <table class="table table-striped" style="background-color: white;">
+                <thead>
+                    <tr >
+                        <th scope="col">Amount</th>
+                        <th scope="col">Bottom</th>
+                        <th scope="col">Topping</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+
+                        double price = 0;
+                        for (int i = 0; i < items.size(); i++)
+                        {
+                            out.println("<tr>");
+                    %>
+                <td style="width:1%;white-space: nowrap">
+                    <input type="text" style="width:50px" value="<%out.println(items.get(i).getCupCake().getAmount());%>" name="<%out.print(i);%>">
+                </td>
                 <%
-                
-                double price = 0;
-                for(OrderLine o : items){
-                    out.println("<tr>");
-                    out.println("<td>" + o.getCupCake().getAmount() + "</td>");
-                    out.println("<td>" + o.getCupCake().getBottom().getFlavor() + "</td>");
-                    out.println("<td>" + o.getCupCake().getTopping().getFlavor()+ "</td>");
-                    out.println("<td>" + o.getCupCake().getPrice()*o.getCupCake().getAmount() + "</td>");
-                    out.println("</tr>");
-                    
-                    price += (o.getCupCake().getPrice()*o.getCupCake().getAmount());
-                    
-                }
+                        out.println("<td>" + items.get(i).getCupCake().getBottom().getFlavor() + "</td>");
+                        out.println("<td>" + items.get(i).getCupCake().getTopping().getFlavor() + "</td>");
+                        out.println("<td>" + items.get(i).getCupCake().getPrice() * items.get(i).getCupCake().getAmount() + "</td>");
+                        out.println("</tr>");
+
+                        price += (items.get(i).getCupCake().getPrice() * items.get(i).getCupCake().getAmount());
+
+                    }
                 %>
-                
-            </tbody>
-        </table>
-                
-        <% out.println("<h4>Total price: " + price + "</h4>"); %>
+
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary mb-3" name="orderID" value="<%out.print(order.getId());%>" >Update</button>
+        </form>
+
+        <% out.println("<h4>Total price: " + price + "</h4>");%>
 
         <a href="adminOrder" class="btn btn-primary mb-3 mt-3">Go Back</a>
     </div>
 </div>
 
 <%@include file="footer.jsp" %>
+
