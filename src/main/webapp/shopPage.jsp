@@ -14,7 +14,7 @@
 <%
     User user = (User) session.getAttribute("user");
     ArrayList<CupCake> cart = (ArrayList<CupCake>) session.getAttribute("cart");
-
+    double cartPrice = (double) session.getAttribute("cartPrice");
     ArrayList<CupCakePiece> toppings = (ArrayList) request.getAttribute("toppings");
     ArrayList<CupCakePiece> bottoms = (ArrayList) request.getAttribute("bottoms");
 %>
@@ -69,7 +69,7 @@
                             <th scope="col">Bottom</th>
                             <th scope="col">Topping</th>
                             <th scope="col">Amount</th>
-                            <th scope="col"></th>
+                            <th scope="col">Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,10 +84,24 @@
                         <input type="text" style="width:50px" value="<%out.println(cart.get(i).getAmount());%>" name="<%out.print(i);%>">
                     </td>
                     <%//out.println("<td>" + c.getAmount() + "</td>");
-                            out.println("<td>" + "x" + "</td>");
+                            out.println("<td>" + cart.get(i).getPrice() + "</td>");
                             out.println("</tr>");
                         }
                     %>
+                    <tr>
+                        <td>
+                            total:
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <%out.println(cartPrice);%>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
                     <button type="submit" class="btn btn-primary mb-3" name="action" value="updateCart" >Update cart</button>

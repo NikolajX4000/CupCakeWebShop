@@ -81,6 +81,7 @@ public class shopPage extends HttpServlet
             }
             if (!doneShopping)
             {
+                totalPrice();
                 getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
             }
         }
@@ -137,6 +138,17 @@ public class shopPage extends HttpServlet
         {
             Logger.getLogger(shopPage.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    private void totalPrice()
+    {
+        ArrayList<CupCake> cart = (ArrayList<CupCake>) session.getAttribute("cart");
+        double total = 0;
+        for (CupCake c : cart)
+        {
+            total += c.getAmount() * c.getPrice();
+        }
+        session.setAttribute("cartPrice", total);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
