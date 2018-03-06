@@ -10,19 +10,23 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DAO {
+public class DAO
+{
 
     private DBConnector conn = new DBConnector();
 
-    public User getUser(String u) {
+    public User getUser(String u)
+    {
         PreparedStatement stmt = null;
         User res = null;
-        try {
+        try
+        {
             String sql = "SELECT * FROM users WHERE username = ?";
             stmt = conn.getConnection().prepareStatement(sql);
             stmt.setString(1, u);
             ResultSet rs = stmt.executeQuery();
-            if (rs.first()) {
+            if (rs.first())
+            {
                 int id = rs.getInt("user_id");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
@@ -30,42 +34,18 @@ public class DAO {
                 String role = rs.getString("role");
                 res = new User(id, username, password, balance, role);
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        return res;
-    }
-    
-    public User getUser(int id) {
-        PreparedStatement stmt = null;
-        User res = null;
-        try {
-            String sql = "SELECT * FROM users WHERE user_id = ?";
-            stmt = conn.getConnection().prepareStatement(sql);
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.first()) {
-                String username = rs.getString("username");
-                String password = rs.getString("password");
-                double balance = rs.getDouble("balance");
-                String role = rs.getString("role");
-                res = new User(id, username, password, balance, role);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -73,14 +53,54 @@ public class DAO {
         return res;
     }
 
-    public ArrayList<User> getUsers() {
+    public User getUser(int id)
+    {
+        PreparedStatement stmt = null;
+        User res = null;
+        try
+        {
+            String sql = "SELECT * FROM users WHERE user_id = ?";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.first())
+            {
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                double balance = rs.getDouble("balance");
+                String role = rs.getString("role");
+                res = new User(id, username, password, balance, role);
+            }
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return res;
+    }
+
+    public ArrayList<User> getUsers()
+    {
         PreparedStatement stmt = null;
         ArrayList<User> users = new ArrayList();
-        try {
+        try
+        {
             String sql = "SELECT * FROM users;";
             stmt = conn.getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 int id = rs.getInt("user_id");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
@@ -88,13 +108,18 @@ public class DAO {
                 String role = rs.getString("role");
                 users.add(new User(id, username, password, balance, role));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -102,23 +127,31 @@ public class DAO {
         return users;
     }
 
-    public boolean createCustomer(String username, String password1, String password2) {
+    public boolean createCustomer(String username, String password1, String password2)
+    {
         PreparedStatement stmt = null;
         boolean createdCustomer = password1.equals(password2);
-        if (createdCustomer) {
-            try {
+        if (createdCustomer)
+        {
+            try
+            {
                 String sql = "INSERT INTO users (username, password) VALUES (?,?);";
                 stmt = conn.getConnection().prepareStatement(sql);
                 stmt.setString(1, username);
                 stmt.setString(2, password1);
                 stmt.executeUpdate();
-            } catch (SQLException ex) {
+            } catch (SQLException ex)
+            {
                 Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
+            } finally
+            {
+                if (stmt != null)
+                {
+                    try
+                    {
                         stmt.close();
-                    } catch (SQLException ex) {
+                    } catch (SQLException ex)
+                    {
                         Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
@@ -127,23 +160,31 @@ public class DAO {
         return createdCustomer;
     }
 
-    public boolean createAdmin(String username, String password1, String password2) {
+    public boolean createAdmin(String username, String password1, String password2)
+    {
         PreparedStatement stmt = null;
         boolean createdAdmin = password1.equals(password2);
-        if (createdAdmin) {
-            try {
+        if (createdAdmin)
+        {
+            try
+            {
                 String sql = "INSERT INTO users (username, password, role) VALUES (?,?, 'Admin');";
                 stmt = conn.getConnection().prepareStatement(sql);
                 stmt.setString(1, username);
                 stmt.setString(2, password1);
                 stmt.executeUpdate();
-            } catch (SQLException ex) {
+            } catch (SQLException ex)
+            {
                 Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
+            } finally
+            {
+                if (stmt != null)
+                {
+                    try
+                    {
                         stmt.close();
-                    } catch (SQLException ex) {
+                    } catch (SQLException ex)
+                    {
                         Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
@@ -152,26 +193,34 @@ public class DAO {
         return createdAdmin;
     }
 
-    public ArrayList<CupCakePiece> getToppings() {
+    public ArrayList<CupCakePiece> getToppings()
+    {
         ArrayList<CupCakePiece> toppings = new ArrayList();
         PreparedStatement stmt = null;
-        try {
+        try
+        {
             String sql = "SELECT * FROM toppings;";
             stmt = conn.getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 int id = rs.getInt("id");
                 String flavor = rs.getString("topping");
                 double price = rs.getDouble("price");
                 toppings.add(new CupCakePiece(id, flavor, price));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -179,26 +228,34 @@ public class DAO {
         return toppings;
     }
 
-    public ArrayList<CupCakePiece> getBottoms() {
+    public ArrayList<CupCakePiece> getBottoms()
+    {
         ArrayList<CupCakePiece> bottoms = new ArrayList();
         PreparedStatement stmt = null;
-        try {
+        try
+        {
             String sql = "SELECT * FROM bottoms;";
             stmt = conn.getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 int id = rs.getInt("id");
                 String flavor = rs.getString("bottom");
                 double price = rs.getDouble("price");
                 bottoms.add(new CupCakePiece(id, flavor, price));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -206,27 +263,35 @@ public class DAO {
         return bottoms;
     }
 
-    public CupCakePiece getTopping(int id) {
+    public CupCakePiece getTopping(int id)
+    {
         String topping = "";
         double price = 0.0;
         PreparedStatement stmt = null;
-        try {
+        try
+        {
             String sql = "SELECT * FROM toppings where id = ?;";
             stmt = conn.getConnection().prepareStatement(sql);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-            if (!rs.first()) {
+            if (!rs.first())
+            {
                 return null;
             }
             topping = rs.getString("topping");
             price = rs.getDouble("price");
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -234,27 +299,35 @@ public class DAO {
         return new CupCakePiece(id, topping, price);
     }
 
-    public CupCakePiece getBottom(int id) {
+    public CupCakePiece getBottom(int id)
+    {
         String bottom = "";
         double price = 0.0;
         PreparedStatement stmt = null;
-        try {
+        try
+        {
             String sql = "SELECT * FROM bottoms where id = ?;";
             stmt = conn.getConnection().prepareStatement(sql);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-            if (!rs.first()) {
+            if (!rs.first())
+            {
                 return null;
             }
             bottom = rs.getString("bottom");
             price = rs.getDouble("price");
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -262,25 +335,33 @@ public class DAO {
         return new CupCakePiece(id, bottom, price);
     }
 
-    public User login(String username, String password) {
+    public User login(String username, String password)
+    {
         PreparedStatement stmt = null;
         User user = null;
-        try {
+        try
+        {
             String sql = "SELECT * FROM users WHERE username = ? AND password = ? ;";
             stmt = conn.getConnection().prepareStatement(sql);
             stmt.setString(1, username);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
+            if (rs.next())
+            {
                 user = new User(rs.getInt("user_id"), rs.getString("username"), rs.getString("role"), rs.getDouble("balance"), rs.getString("role"));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -288,12 +369,14 @@ public class DAO {
         return user;
     }
 
-    public Order getOrder(int id) {
+    public Order getOrder(int id)
+    {
         ArrayList<OrderLine> orderlines = new ArrayList();
         PreparedStatement stmt = null;
         Order order = null;
         String dateTime = null;
-        try {
+        try
+        {
             String sql = "SELECT * "
                     + "FROM orderline "
                     + "INNER JOIN orders "
@@ -308,7 +391,8 @@ public class DAO {
             stmt = conn.getConnection().prepareStatement(sql);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 int userId = rs.getInt("user_id");
                 int orderId = rs.getInt("order_id");
                 int orderlineId = rs.getInt("orderline.id");
@@ -320,76 +404,98 @@ public class DAO {
                 orderlines.add(new OrderLine(userId, orderId, orderlineId, topping, bottom, price, amount));
             }
             order = new Order(id, orderlines, dateTime);
-            
-        } catch (SQLException ex) {
+
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
         return order;
     }
-    
-    public ArrayList<Order> getUsersOrders(int id){
+
+    public ArrayList<Order> getUsersOrders(int id)
+    {
         ArrayList<Order> orders = new ArrayList();
         PreparedStatement stmt = null;
-        try {
+        try
+        {
             String sql = "SELECT * "
                     + "FROM orders "
                     + "WHERE user_id = ?;";
             stmt = conn.getConnection().prepareStatement(sql);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 int orderId = rs.getInt("id");
                 String dateTime = rs.getString("date");
-                orders.add(new Order(orderId,getOrder(orderId).getOrder(), dateTime));
+                orders.add(new Order(orderId, getOrder(orderId).getOrder(), dateTime));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
         return orders;
     }
-    
-    public ArrayList<Order> getAllOrders(){
+
+    public ArrayList<Order> getAllOrders()
+    {
         ArrayList<Order> orders = new ArrayList();
         PreparedStatement stmt = null;
-        try {
+        try
+        {
             String sql = "SELECT * "
                     + "FROM orders;";
             stmt = conn.getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 int orderId = rs.getInt("id");
                 String dateTime = rs.getString("date");
-                orders.add(new Order(orderId,getOrder(orderId).getOrder(), dateTime));
+                orders.add(new Order(orderId, getOrder(orderId).getOrder(), dateTime));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (stmt != null) {
-                try {
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
                     stmt.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+                {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
         return orders;
     }
+
     public void insertOrder(ArrayList<CupCake> cart, User user)
     {
         PreparedStatement stmt = null;
@@ -434,158 +540,204 @@ public class DAO {
             }
         }
     }
-    
-    public boolean addTopping(String flavor, double price) {
+
+    public boolean addTopping(String flavor, double price)
+    {
         PreparedStatement stmt = null;
         boolean success = false;
-            try {
-                String sql = "INSERT INTO toppings (topping, price) VALUES (?, ?);";
-                stmt = conn.getConnection().prepareStatement(sql);
-                stmt.setString(1, flavor);
-                stmt.setDouble(2, price);
-                success = stmt.executeUpdate() == 1;
-            } catch (SQLException ex) {
-                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+        try
+        {
+            String sql = "INSERT INTO toppings (topping, price) VALUES (?, ?);";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setString(1, flavor);
+            stmt.setDouble(2, price);
+            success = stmt.executeUpdate() == 1;
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+        }
         return success;
     }
-    
-    public boolean addBottom(String flavor, double price) {
+
+    public boolean addBottom(String flavor, double price)
+    {
         PreparedStatement stmt = null;
         boolean success = false;
-            try {
-                String sql = "INSERT INTO bottoms (bottom, price) VALUES (?, ?);";
-                stmt = conn.getConnection().prepareStatement(sql);
-                stmt.setString(1, flavor);
-                stmt.setDouble(2, price);
-                success = stmt.executeUpdate() == 1;
-            } catch (SQLException ex) {
-                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+        try
+        {
+            String sql = "INSERT INTO bottoms (bottom, price) VALUES (?, ?);";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setString(1, flavor);
+            stmt.setDouble(2, price);
+            success = stmt.executeUpdate() == 1;
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+        }
         return success;
     }
-    
-    public boolean changeOrderlineAmount(int id, int amount) {
-     PreparedStatement stmt = null;
+
+    public boolean changeOrderlineAmount(int id, int amount)
+    {
+        PreparedStatement stmt = null;
         boolean success = false;
-            try {
-                String sql = "UPDATE orderline SET amount= ? WHERE id= ?;";
-                stmt = conn.getConnection().prepareStatement(sql);
-                stmt.setInt(1, amount);
-                stmt.setInt(2, id);
-                success = stmt.executeUpdate() == 1;
-                
-            } catch (SQLException ex) {
-                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+        try
+        {
+            String sql = "UPDATE orderline SET amount= ? WHERE id= ?;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setInt(1, amount);
+            stmt.setInt(2, id);
+            success = stmt.executeUpdate() == 1;
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        return success;   
+        }
+        return success;
     }
-    
-    public String getUserById(int id) {
+
+    public String getUserById(int id)
+    {
         PreparedStatement stmt = null;
         String username = null;
-            try {
-                String sql = "SELECT * FROM users WHERE user_id= ?;";
-                stmt = conn.getConnection().prepareStatement(sql);
-                stmt.setInt(1, id);
-                stmt.executeQuery();
-                
-                ResultSet rs = stmt.executeQuery();
-                if (rs.first()) {
-                    username = rs.getString("username");
-                }
-                
-            } catch (SQLException ex) {
-                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+        try
+        {
+            String sql = "SELECT * FROM users WHERE user_id= ?;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.executeQuery();
+
+            ResultSet rs = stmt.executeQuery();
+            if (rs.first())
+            {
+                username = rs.getString("username");
+            }
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        return username;   
+        }
+        return username;
     }
-    
-    public double deposit(int id, double value) {
+
+    public double deposit(int id, double value)
+    {
         PreparedStatement stmt = null;
         double balance = 0;
-            try {
-                String sql = "UPDATE users SET balance=? WHERE user_id= ?;";
-                stmt = conn.getConnection().prepareStatement(sql);
-                balance = getUser(id).getBalance() + value;
-                stmt.setDouble(1, balance);
-                stmt.setInt(2, id);
-                stmt.executeUpdate();
-                
-            } catch (SQLException ex) {
-                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+        try
+        {
+            String sql = "UPDATE users SET balance=? WHERE user_id= ?;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            balance = getUser(id).getBalance() + value;
+            stmt.setDouble(1, balance);
+            stmt.setInt(2, id);
+            stmt.executeUpdate();
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        return balance;  
+        }
+        return balance;
     }
-    
-    public boolean withdrawal(int id, double value) {
+
+    public boolean withdrawal(int id, double value)
+    {
         PreparedStatement stmt = null;
         double balance = getUser(id).getBalance();
-        
+
         boolean succes = false;
-         
-        if (balance - value < 0) return false;
-        
-            try {
-                String sql = "UPDATE users SET balance=? WHERE user_id= ?;";
-                stmt = conn.getConnection().prepareStatement(sql);
-                balance = getUser(id).getBalance() - value;
-                stmt.setDouble(1, balance);
-                stmt.setInt(2, id);
-                succes = stmt.executeUpdate() == 1;
-                
-            } catch (SQLException ex) {
-                Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+
+        if (balance - value < 0)
+        {
+            return false;
+        }
+
+        try
+        {
+            String sql = "UPDATE users SET balance=? WHERE user_id= ?;";
+            stmt = conn.getConnection().prepareStatement(sql);
+            balance = getUser(id).getBalance() - value;
+            stmt.setDouble(1, balance);
+            stmt.setInt(2, id);
+            succes = stmt.executeUpdate() == 1;
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally
+        {
+            if (stmt != null)
+            {
+                try
+                {
+                    stmt.close();
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        return succes;  
+        }
+        return succes;
     }
-    
+
 }
