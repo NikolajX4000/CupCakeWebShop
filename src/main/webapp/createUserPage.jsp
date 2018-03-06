@@ -1,29 +1,82 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="header.jsp" %>
-<div class="container">
-    <div class="jumbotron">
-        <h1 class="display-4">Welcome to Cupcakes!</h1>
-        <p class="lead">Create a user to start ordering cupcakes today!</p>
-        <form class="mb-2" name="create_form" method="post">
-            <div class="form-row mb-2">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <p>Username</p>
-                    <input name="username" type="text" class="form-control" placeholder="Username">
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <p>Password</p>
-                    <input name="password" type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <p>Repeat Password</p>
-                    <input name="password2" type="password" class="form-control" placeholder="Password">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary" name="action" value="register">Sign up</button>
+<style type="text/css">
+    
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+    .dContainer{
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .dForm{
+        background-color: #636363;
+        color: white;
+        padding: 20px;
+        border-radius: 3px;
+        display: inline-block;
+        box-shadow: inset 0px 0px 5px 0px black;
+    }
+
+    .dP{
+
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .dInput{
+        padding: 5px 10px;
+        border: 1px solid orange;
+        border-radius: 3px;
+        width: 100%;
+        min-width: 300px;
+        max-width: 400px;
+        margin-bottom: 15px;
+    }
+    .dInput:focus{  
+        outline-color: green;
+    }
+
+    .dBtn{
+        padding: 10px 10px;
+        background-color: lightgreen;
+        border-radius: 10px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    .dErr{
+        color: red;
+        padding: 10px;
+    }
+</style>
+
+
+
+
+    <div class="container dContainer">
+
+
+        <h1 class="dH1">Welcome to cupcakes - now with custom CSS</h1>
+
+        <h2 class="dH2">It's time to create a user and start ordering some CuPcAkEs</h2>
+
+
+        <form class="dForm" name="create_form" method="post">
+            <p class="dP">Awesome username</p>
+            <input name="username" type="text" class="dInput" placeholder="Username">
+
+            <p class="dP">Make a cute password</p>
+            <input name="password" type="password" class="dInput" placeholder="Password">
+
+            <p class="dP">Repeat password</p>
+            <input name="password" type="password" class="dInput" placeholder="Password">
+
+            <div>
+                <button type="submit" class="dBtn" name="action" value="register">Sign up</button>
+            </div>
+            
         </form>
-        <a class="" href="welcome" role="button">Already have an account? click here to log in.</a>
+
+        <div class="dErr">${err}</div>
+
     </div>
-</div>
 <%@include file="footer.jsp" %>
