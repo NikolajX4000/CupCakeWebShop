@@ -146,13 +146,13 @@ public class shopPage extends HttpServlet
             orderID = dao.insertOrder(cart, user);
             session.setAttribute("cart", new ArrayList<>());
             doneShopping = true;
-        }
-        try
-        {
-            response.sendRedirect("users?id=" + Integer.toString(orderID));
-        } catch (IOException ex)
-        {
-            Logger.getLogger(shopPage.class.getName()).log(Level.SEVERE, null, ex);
+            try
+            {
+                response.sendRedirect("users?id=" + Integer.toString(orderID));
+            } catch (IOException ex)
+            {
+                Logger.getLogger(shopPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
