@@ -66,12 +66,22 @@ public class welcomePage extends HttpServlet
                         goHere = "shop";
                     }
                 }
-                if (request.getParameter("action").equals("register"))
-                {
-                    boolean createdUser = dao.createCustomer(request.getParameter("username"), request.getParameter("password"), request.getParameter("password2"));
+                if (request.getParameter("action").equals("register")){
+                    
+                    String un = request.getParameter("username");
+                    String pw = request.getParameter("password");
+                    String pw2 = request.getParameter("password2");
+                    
+                    request.setAttribute("un", un);
+                    request.setAttribute("pw", pw);
+                    request.setAttribute("pw2", pw2);
+                
+                    boolean createdUser = dao.createCustomer(un, pw, pw2);
                     if (createdUser)
                     {
                         goHere = "welcome";
+                    }else{
+                        request.setAttribute("err", "Something went wrong");
                     }
                 }
             }

@@ -62,13 +62,13 @@
 
         <form class="dForm" name="create_form" method="post">
             <p class="dP">Awesome username</p>
-            <input name="username" type="text" class="dInput" placeholder="Username">
+            <input name="username" type="text" class="dInput" placeholder="Username" value="${un}">
 
             <p class="dP">Make a cute password</p>
-            <input name="password" type="password" class="dInput" placeholder="Password">
+            <input name="password" type="password" class="dInput" placeholder="Password" value="${pw}">
 
             <p class="dP">Repeat password</p>
-            <input name="password" type="password" class="dInput" placeholder="Password">
+            <input name="password2" type="password" class="dInput" placeholder="Password" value="${pw2}">
 
             <div>
                 <button type="submit" class="dBtn" name="action" value="register">Sign up</button>
