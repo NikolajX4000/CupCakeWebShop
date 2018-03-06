@@ -6,11 +6,11 @@ public class test {
     
     public static void main(String[] args)
     {
-        System.out.println("dis is test");
+        System.out.println("1 evil test");
         
+        System.out.println("2 dis is test");
         
-        
-        System.out.println("daniel skriver her hihihihihi");
+        System.out.println("3 daniel skriver her hihihihihi");
         
     }
 
