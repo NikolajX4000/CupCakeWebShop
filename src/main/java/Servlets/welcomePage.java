@@ -9,6 +9,7 @@ import DBConnection.DAO;
 import Data.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +43,8 @@ public class welcomePage extends HttpServlet
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
         HttpSession s = request.getSession();
-
+        request.setCharacterEncoding("UTF-8");
+        
         s.setAttribute("curPage", "welcome");
         
         if (s.getAttribute("user") != null)
@@ -72,10 +74,13 @@ public class welcomePage extends HttpServlet
                     String pw = request.getParameter("password");
                     String pw2 = request.getParameter("password2");
                     
+//                    byte[] bytes = un.getBytes(StandardCharsets.ISO_8859_1);
+//                    un = new String(bytes, StandardCharsets.UTF_8);
+                    
                     request.setAttribute("un", un);
                     request.setAttribute("pw", pw);
                     request.setAttribute("pw2", pw2);
-                
+                              
                     boolean createdUser = dao.createCustomer(un, pw, pw2);
                     if (createdUser)
                     {
