@@ -496,7 +496,7 @@ public class DAO
         return orders;
     }
 
-    public void insertOrder(ArrayList<CupCake> cart, User user)
+    public int insertOrder(ArrayList<CupCake> cart, User user)
     {
         PreparedStatement stmt = null;
         int lastId = 0;
@@ -539,6 +539,7 @@ public class DAO
                 }
             }
         }
+        return lastId;
     }
 
     public boolean addTopping(String flavor, double price)

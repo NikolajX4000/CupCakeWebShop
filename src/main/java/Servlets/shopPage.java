@@ -47,14 +47,17 @@ public class shopPage extends HttpServlet
 
         HttpSession session = request.getSession();
         session.setAttribute("curPage", "welcome");
-        
+
         if (session.getAttribute("user") == null)
         {
             response.sendRedirect("index.jsp");
         } else
         {
-
+            boolean doneShopping = false;
+            int orderID = 0;
             ArrayList<CupCake> cart;
+            request.setAttribute("toppings", dao.getToppings());
+            request.setAttribute("bottoms", dao.getBottoms());
 
             if (session.getAttribute("cart") == null)
             {
@@ -91,8 +94,9 @@ public class shopPage extends HttpServlet
                 if (!cart.isEmpty())
                 {
                     User user = (User) session.getAttribute("user");
-                    dao.insertOrder(cart, user);
-                    session.setAttribute("cart", new ArrayList<CupCake>());
+                    orderID = dao.insertOrder(cart, user);
+                    session.setAttribute("cart", new ArrayList<>());
+                    doneShopping = true;
                 }
             } else if (request.getParameter("action") != null && request.getParameter("action").equals("updateCart"))
             {
@@ -102,10 +106,13 @@ public class shopPage extends HttpServlet
                     cart.get(i).setAmount(Integer.parseInt(request.getParameter(Integer.toString(i))));
                 }
             }
-            request.setAttribute("toppings", dao.getToppings());
-            request.setAttribute("bottoms", dao.getBottoms());
-            getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
-
+            if (!doneShopping)
+            {
+                getServletContext().getRequestDispatcher("/shopPage.jsp").forward(request, response);
+            } else
+            {
+                response.sendRedirect("users?id=" + orderID);
+            }
         }
     }
 
