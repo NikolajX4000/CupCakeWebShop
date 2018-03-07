@@ -18,7 +18,16 @@ public class OrderLine
     private int orderlineId;
     private CupCake cupCake;
 
-
+    /**
+     *
+     * @param userId the id of the customer
+     * @param orderId the id of the order
+     * @param orderlineId the orderlines id
+     * @param topping the topping of the cupcake
+     * @param bottom the bottom of the cupcake
+     * @param price the price per cupcake
+     * @param amount the amount of cupcakes
+     */
     public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
     {
         this.userId = userId;
@@ -27,21 +36,37 @@ public class OrderLine
         this.cupCake = new CupCake(bottom, topping, amount);
     }
 
+    /**
+     *
+     * @return the id of the customer
+     */
     public int getUserId()
     {
         return userId;
     }
 
+    /**
+     *
+     * @return the id of the order
+     */
     public int getOrderId()
     {
         return orderId;
     }
 
+    /**
+     *
+     * @return the orderlines id
+     */
     public int getOrderlineId()
     {
         return orderlineId;
     }
 
+    /**
+     *
+     * @return the cupcake
+     */
     public CupCake getCupCake() {
         return cupCake;
     }

@@ -1,25 +1,47 @@
 package Data;
 
+/**
+ *
+ * @author super
+ */
 public class CupCakePiece{
 
     private int id;
     private String flavor;
     private double price;
 
+    /**
+     *
+     * @param id the id of the cupcakepiece
+     * @param flavor the flavor of the cupcakepiece
+     * @param price the price of the cupcakepiece
+     */
     public CupCakePiece(int id, String flavor, double price) {
         this.id = id;
         this.flavor = flavor;
         this.price = price;
     }
 
+    /**
+     *
+     * @return the id of the cupcakepiece 
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @returnthe the flavor of the cupcakepiece
+     */
     public String getFlavor() {
         return flavor;
     }
 
+    /**
+     *
+     * @return the price of the cupcakepiece
+     */
     public double getPrice() {
         return price;
     }

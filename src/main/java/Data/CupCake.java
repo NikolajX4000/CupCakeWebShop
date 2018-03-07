@@ -2,6 +2,10 @@ package Data;
 
 import java.util.Objects;
 
+/**
+ *
+ * @author super
+ */
 public class CupCake {
 
     private CupCakePiece bottom;
@@ -9,6 +13,12 @@ public class CupCake {
     private double price;
     private int amount;
 
+    /**
+     *
+     * @param bottom the bottom of the cupcake
+     * @param topping the topping of the cupcake
+     * @param amount the amount of cupcakes
+     */
     public CupCake(CupCakePiece bottom, CupCakePiece topping, int amount) {
         this.bottom = bottom;
         this.topping = topping;
@@ -16,18 +26,34 @@ public class CupCake {
         price = this.bottom.getPrice() + this.topping.getPrice();
     }
 
+    /**
+     *
+     * @return the bottom of the cupcake
+     */
     public CupCakePiece getBottom() {
         return bottom;
     }
 
+    /**
+     *
+     * @return the topping of the cupcake
+     */
     public CupCakePiece getTopping() {
         return topping;
     }
 
+    /**
+     *
+     * @return the price of the cupcake
+     */
     public double getPrice() {
         return price;
     }
 
+    /**
+     *
+     * @return the amount of cupcakes
+     */
     public int getAmount()
     {
         return amount;
@@ -69,15 +95,19 @@ public class CupCake {
         return true;
     }
     
-    
-
-    
-    
+    /**
+     * adds to the amount of cupcakes
+     * @param amount the amount to be added
+     */
     public void addAmount(int amount)
     {
         this.amount += amount;
     }
 
+    /**
+     * set the amount of cupcake
+     * @param amount the amount to be set
+     */
     public void setAmount(int amount)
     {
         this.amount = amount;
