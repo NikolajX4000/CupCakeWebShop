@@ -1,54 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="header.jsp" %>
-<style type="text/css">
-    
-    @import url('https://fonts.googleapis.com/css?family=Raleway');
-
-    .dContainer{
-        font-family: 'Raleway', sans-serif;
-    }
-
-    .dForm{
-        background-color: #636363;
-        color: white;
-        padding: 20px;
-        border-radius: 3px;
-        display: inline-block;
-        box-shadow: inset 0px 0px 5px 0px black;
-    }
-
-    .dP{
-
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-    .dInput{
-        padding: 5px 10px;
-        border: 1px solid orange;
-        border-radius: 3px;
-        width: 100%;
-        min-width: 300px;
-        max-width: 400px;
-        margin-bottom: 15px;
-    }
-    .dInput:focus{  
-        outline-color: green;
-    }
-
-    .dBtn{
-        padding: 10px 10px;
-        background-color: lightgreen;
-        border-radius: 10px;
-        border: 1px solid black;
-        cursor: pointer;
-    }
-    .dErr{
-        color: red;
-        padding: 10px;
-    }
-</style>
-
 
 
 

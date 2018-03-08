@@ -23,6 +23,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
         <style>
             body {
                 font-family: 'Oswald', sans-serif !important;
@@ -33,30 +34,14 @@
     <body>
 
 
-        <div class="navbar navbar-dark navbar-expand-sm" style="background-color:chocolate">
-            <div class="container">
-                <a href="welcome" class="navbar-brand">Cupcakes</a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarMenu">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="welcome" class="nav-link<% if(a.equals("welcome"))out.print(b);%>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="users" class="nav-link<% if(a.equals("users"))out.print(b);%>">My Orders</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="adminOrder" class="nav-link<% if(a.equals("adminOrder"))out.print(b);%>">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="logout.jsp" class="nav-link<% if(a.equals("logout"))out.print(b);%>">Logout</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav>
+            <div class='logo'>Cupcakes!</div>
+            <div>
+                <a href="welcome" class="nav-link<% if(a.equals("welcome"))out.print(b);%>">Home</a>
+                <a href="users" class="nav-link<% if(a.equals("users"))out.print(b);%>">My Orders</a>
+                <a href="adminOrder" class="nav-link<% if(a.equals("adminOrder"))out.print(b);%>">Admin</a>
+                <a href="logout.jsp" class="nav-link<% if(a.equals("logout"))out.print(b);%>">Logout</a>
             </div>
-        </div>
-</html>
+            
+        </nav> 
+

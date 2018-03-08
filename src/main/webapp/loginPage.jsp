@@ -17,6 +17,8 @@
     <div class="jumbotron">
         <h1 class="display-4">Welcome to Cupcakes!</h1>
         <p class="lead">The best cupcake webshop in the world.</p>
+        <img src="http://del.h-cdn.co/assets/17/35/980x490/landscape-1504040562-delish-moscato-cupcakes-still001.jpg"/>
+
         <hr class="my-4">
         <p>Login below to start ordering some delicious cupcakes.</p>
 

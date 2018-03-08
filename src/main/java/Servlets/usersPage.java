@@ -54,22 +54,34 @@ public class usersPage extends HttpServlet
         } else
         {
 
+            
+            
+            User user = (User) s.getAttribute("user");
+            request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
+
             if (request.getParameter("id") != null)
             {
                 request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
 
-                getServletContext().getRequestDispatcher("/userSpecificOrderPage.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/proOrderPage.jsp").forward(request, response);
             } else
             {
+                //request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
+                
+                //User user = (User) s.getAttribute("user");
 
-                User user = (User) s.getAttribute("user");
-
-                request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
+                //request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
 
                 getServletContext().getRequestDispatcher("/userOrdersPage.jsp").forward(request, response);
             }
-
+            
+            //User user = (User) s.getAttribute("user");
+            //request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
+            //getServletContext().getRequestDispatcher("/proOrderPage.jsp").forward(request, response);
             //ArrayList<Order> getUsersOrders
+            
+            
+            
         }
     }
 
