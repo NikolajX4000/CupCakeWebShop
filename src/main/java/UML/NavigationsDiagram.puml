@@ -1,0 +1,30 @@
+@startuml
+
+title Navigations Diagram
+
+[*] --> index.jsp
+adminOrdersPage.jsp --> adminSpecificOrderPage.jsp
+adminSpecificOrderPage.jsp --> adminOrdersPage.jsp
+createUserPage.jsp --> welcomePage
+header.jsp --> adminOrderPage
+header.jsp --> logout.jsp
+header.jsp --> usersPage
+header.jsp --> welcomePage
+index.jsp --> welcomePage
+loginPage.jsp --> welcomePage
+proOrderPage.jsp --> userSpecificOrderPage.jsp
+shopPage --> index.jsp
+shopPage --> shopPage.jsp
+shopPage --> usersPage
+shopPage.jsp --> shopPage
+userOrderPage.jsp --> userSpecificOrderPage.jsp
+usersPage --> index.jsp
+usersPage --> proOrderPage.jsp
+usersPage --> userOrderPage.jsp
+userSpecificOrderPage.jsp --> proOrderPage.jsp
+welcomePage --> createUserPage.jsp
+welcomePage --> loginPage.jsp
+welcomePage --> shopPage
+welcomePage --> welcomePage
+
+@enduml
