@@ -32,7 +32,7 @@ public class CupCakePiece{
 
     /**
      *
-     * @returnthe the flavor of the cupcakepiece
+     * @return the the flavor of the cupcakepiece
      */
     public String getFlavor() {
         return flavor;
