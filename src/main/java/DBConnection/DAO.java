@@ -708,7 +708,7 @@ public class DAO {
     }
 
     /**
-     * changes the amout on the orderline with specified id to the specified
+     * changes the amount on the orderline with specified id to the specified
      * amount
      *
      * @param orderlineId the id of the desired orderline
