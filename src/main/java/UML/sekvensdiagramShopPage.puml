@@ -1,0 +1,41 @@
+@startuml
+
+title "Shop page - Sequence Diagram"
+
+actor User
+boundary "shopPage.jsp" as SP
+boundary "userSpecificOrderPage.jsp" as IN
+participant "shopPage.java" as SC
+participant "DAO" as DAO
+database "Database" as DB
+
+group Add to cart
+User -> SP : Input cupcake
+SP -> SC : Add to cart
+SC -> SC : Update cart
+SC -> SP : Shopping cart
+SP -> User : Show cart
+end
+
+group Update cart
+User -> SP : Update cupcake
+SP -> SC : Update cart
+SC -> SC : Update cart
+SC -> SP : Shopping cart
+SP -> User : Show cart
+end
+
+group Chech out
+User -> SP : Check out
+SP -> SC : Check out
+SC -> DAO : Shopping cart
+DAO -> DB : Execute query
+DB -> DAO : Result set
+DAO -> SC : Invoice id
+SC -> IN : Redirect to invoice
+IN -> User : Show Order
+end
+
+
+
+@enduml
