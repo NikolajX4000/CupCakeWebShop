@@ -18,7 +18,7 @@ header.jsp --> logout.jsp
 header.jsp --> usersPage
 logout.jsp --> welcomePage
 proOrderPage.jsp --> userSpecificOrderPage.jsp
-shopPage --> index.jsp
+shopPage <--> index.jsp
 shopPage --> shopPage.jsp
 shopPage --> usersPage
 shopPage.jsp --> shopPage

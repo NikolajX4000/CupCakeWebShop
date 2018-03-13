@@ -2,6 +2,8 @@
 
 title "Shop page - Sequence Diagram"
 
+skinparam shadowing false
+
 actor User
 boundary "shopPage.jsp" as SP
 boundary "userSpecificOrderPage.jsp" as IN
