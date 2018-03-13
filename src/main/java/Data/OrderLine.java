@@ -11,8 +11,8 @@ import java.util.Objects;
  *
  * @author Stephan
  */
-public class OrderLine
-{
+public class OrderLine {
+
     private int userId;
     private int orderId;
     private int orderlineId;
@@ -28,8 +28,7 @@ public class OrderLine
      * @param price the price per cupcake
      * @param amount the amount of cupcakes
      */
-    public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
-    {
+    public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount) {
         this.userId = userId;
         this.orderId = orderId;
         this.orderlineId = orderlineId;
@@ -40,8 +39,7 @@ public class OrderLine
      *
      * @return the id of the customer
      */
-    public int getUserId()
-    {
+    public int getUserId() {
         return userId;
     }
 
@@ -49,8 +47,7 @@ public class OrderLine
      *
      * @return the id of the order
      */
-    public int getOrderId()
-    {
+    public int getOrderId() {
         return orderId;
     }
 
@@ -58,8 +55,7 @@ public class OrderLine
      *
      * @return the orderlines id
      */
-    public int getOrderlineId()
-    {
+    public int getOrderlineId() {
         return orderlineId;
     }
 
@@ -72,8 +68,7 @@ public class OrderLine
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "OrderLine" + "topping=" + cupCake.getTopping() + ", bottom=" + cupCake.getBottom() + ", price=" + cupCake.getPrice() + ", amount=" + cupCake.getAmount();
     }
 
@@ -106,8 +101,4 @@ public class OrderLine
         return true;
     }
 
-    
 }
-
-
-

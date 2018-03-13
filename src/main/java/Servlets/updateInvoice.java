@@ -44,10 +44,10 @@ public class updateInvoice extends HttpServlet {
         DAO dao = new DAO();
         int amount = 0;
         Order order = dao.getOrder(Integer.parseInt(request.getParameter("orderID")));
-        for (int i = 0; i < order.getOrder().size(); i++) {
+        for (int i = 0; i < order.getOrderlines().size(); i++) {
             amount = Integer.parseInt(request.getParameter(Integer.toString(i)));
-            if (order.getOrder().get(i).getCupCake().getAmount() != amount) {
-                dao.updateOrderLine(order.getOrder().get(i).getOrderlineId(), amount);
+            if (order.getOrderlines().get(i).getCupCake().getAmount() != amount) {
+                dao.updateOrderLine(order.getOrderlines().get(i).getOrderlineId(), amount);
             }
 
         }

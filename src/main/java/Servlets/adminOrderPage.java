@@ -56,7 +56,7 @@ public class adminOrderPage extends HttpServlet {
 
                     Order order = dao.getOrder(Integer.parseInt(request.getParameter("id")));
 
-                    if (!order.getOrder().isEmpty()) {
+                    if (!order.getOrderlines().isEmpty()) {
                         request.setAttribute("orderDetails", order);
                         getServletContext().getRequestDispatcher("/adminSpecificOrderPage.jsp").forward(request, response);
                     } else {

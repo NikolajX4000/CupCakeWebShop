@@ -1,47 +1,87 @@
 @startuml
 
+package DBConnection{
+class DAO << (J,red) >>
+class DBConnector << (J,red) >>
+}
+package Data{
+class CupCake << (E,lightblue) >>
+class CupCakePiece << (E,lightblue) >>
+class Order << (E,lightblue) >>
+class Orderline << (E,lightblue) >>
+class User << (E,lightblue) >>
+}
+package Servlets{
 class adminOrderPage << (S,orchid) >>
 class createPiece << (S,orchid) >>
 class shopPage << (S,orchid) >>
 class updateInvoice << (S,orchid) >>
 class usersPage << (S,orchid) >>
 class welcomePage << (S,orchid) >>
-class CupCake << (E,lightblue) >>
-class CupCakePiece << (E,lightblue) >>
-class Order << (E,lightblue) >>
-class Orderline << (E,lightblue) >>
-class User << (E,lightblue) >>
-class DAO << (D,red) >>
-class DBConnector << (D,red) >>
+}
 
-adminOrderPage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
-adminOrderPage : # doGet(HttpServletRequest request, HttpServletResponse response)
-adminOrderPage : # doPost(HttpServletRequest request, HttpServletResponse response)
-adminOrderPage : + getServletInfo()
-createPiece : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
-createPiece : # doGet(HttpServletRequest request, HttpServletResponse response)
-createPiece : # doPost(HttpServletRequest request, HttpServletResponse response)
-createPiece : + getServletInfo()
-shopPage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
-shopPage : - addToOrder(HttpServletRequest request)
-shopPage : - updateCart(HttpServletRequest request)
-shopPage : - checkOut(HttpServletResponse response)
-shopPage : - totalPrice()
-shopPage : # doGet(HttpServletRequest request, HttpServletResponse response)
-shopPage : # doPost(HttpServletRequest request, HttpServletResponse response)
-shopPage : + getServletInfo()
-updateInvoice : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
-updateInvoice : # doGet(HttpServletRequest request, HttpServletResponse response)
-updateInvoice : # doPost(HttpServletRequest request, HttpServletResponse response)
-updateInvoice : + getServletInfo()
-usersPage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
-usersPage : # doGet(HttpServletRequest request, HttpServletResponse response)
-usersPage : # doPost(HttpServletRequest request, HttpServletResponse response)
-usersPage : + getServletInfo()
-welcomePage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
-welcomePage : # doGet(HttpServletRequest request, HttpServletResponse response)
-welcomePage : # doPost(HttpServletRequest request, HttpServletResponse response)
-welcomePage : + getServletInfo()
+adminOrderPage : # void proccessRequest(HttpServletRequest request, HttpServletResponse response)
+adminOrderPage : # void doGet(HttpServletRequest request, HttpServletResponse response)
+adminOrderPage : # void doPost(HttpServletRequest request, HttpServletResponse response)
+adminOrderPage : + String getServletInfo()
+createPiece : # void proccessRequest(HttpServletRequest request, HttpServletResponse response)
+createPiece : # void doGet(HttpServletRequest request, HttpServletResponse response)
+createPiece : # void doPost(HttpServletRequest request, HttpServletResponse response)
+createPiece : + String getServletInfo()
+shopPage : # void proccessRequest(HttpServletRequest request, HttpServletResponse response)
+shopPage : - void addToOrder(HttpServletRequest request)
+shopPage : - void updateCart(HttpServletRequest request)
+shopPage : - void checkOut(HttpServletResponse response)
+shopPage : - void totalPrice()
+shopPage : # void doGet(HttpServletRequest request, HttpServletResponse response)
+shopPage : # void doPost(HttpServletRequest request, HttpServletResponse response)
+shopPage : + String getServletInfo()
+updateInvoice : # void proccessRequest(HttpServletRequest request, HttpServletResponse response)
+updateInvoice : # void doGet(HttpServletRequest request, HttpServletResponse response)
+updateInvoice : # void doPost(HttpServletRequest request, HttpServletResponse response)
+updateInvoice : + String getServletInfo()
+usersPage : # void proccessRequest(HttpServletRequest request, HttpServletResponse response)
+usersPage : # void doGet(HttpServletRequest request, HttpServletResponse response)
+usersPage : # void doPost(HttpServletRequest request, HttpServletResponse response)
+usersPage : + String getServletInfo()
+welcomePage : # void proccessRequest(HttpServletRequest request, HttpServletResponse response)
+welcomePage : # void doGet(HttpServletRequest request, HttpServletResponse response)
+welcomePage : # void doPost(HttpServletRequest request, HttpServletResponse response)
+welcomePage : + String getServletInfo()
+CupCake : - CupCakePiece bottom
+CupCake : - CupCakePiece topping
+CupCake : - double price
+CupCake : - int amount
+CupCake : + CupCake(CupCakePiece bottom, CupCakePiece topping, int amount)
+CupCake : + CupCakePiece getBottom()
+CupCake : + CupCakePiece getTopping()
+CupCake : + double getPrice()
+CupCake : + int getAmount()
+CupCake : + int hashCode()
+CupCake : + boolean equals()
+CupCake : + void addAmount(int amount)
+CupCake : + void setAmount(int amount)
+CupCake : + String toString()
+CupCakePiece : - int id
+CupCakePiece : - String flavor
+CupCakePiece : - double price
+CupCakePiece : + CupCakePiece(int id, String flavor, double price)
+CupCakePiece : + int getId()
+CupCakePiece : + String getFlavor()
+CupCakePiece : + double getPrice()
+CupCakePiece : + String toString()
+CupCakePiece : + int hashCode()
+CupCakePiece : + boolean equals()
+Order : - int id
+Order : - ArrayList<Orderline> orderlines
+Order : - double totalPrice
+Order : - String dateTime
+Order : + Order(int id, ArrayList<Orderline> orderlines, double totalPrice, String dateTime)
+Order : - void setPrice()
+Order : + int getId()
+Order : + ArrayList<Orderlines> getOrderlines()
+Order : + double getTotalPrice()
+Order : + String getDateTime()
 
 adminOrderPage --> DAO
 adminOrderPage --> Order
@@ -59,6 +99,8 @@ usersPage --> User
 welcomePage --> DAO
 welcomePage --> DAO
 welcomePage --> User
+CupCake --> CupCakePiece
+Order --> Orderline
 DAO --> DBConnector
 
 @enduml
