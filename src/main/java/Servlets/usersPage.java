@@ -6,11 +6,8 @@
 package Servlets;
 
 import DBConnection.DAO;
-import Data.Order;
 import Data.User;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,12 +19,11 @@ import javax.servlet.http.HttpSession;
  *
  * @author Hupra Laptop
  */
-@WebServlet(name = "usersPage", urlPatterns =
-{
-    "/users"
-})
-public class usersPage extends HttpServlet
-{
+@WebServlet(name = "usersPage", urlPatterns
+        = {
+            "/users"
+        })
+public class usersPage extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,49 +35,36 @@ public class usersPage extends HttpServlet
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
         HttpSession s = request.getSession();
-        
-        
+
         s.setAttribute("curPage", "users");
 
-        if (s.getAttribute("user") == null)
-        {
+        if (s.getAttribute("user") == null) {
             response.sendRedirect("index.jsp");
-        } else
-        {
+        } else {
 
-            
-            
             User user = (User) s.getAttribute("user");
             request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
 
-            if (request.getParameter("id") != null)
-            {
+            if (request.getParameter("id") != null) {
                 request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
 
                 getServletContext().getRequestDispatcher("/proOrderPage.jsp").forward(request, response);
-            } else
-            {
+            } else {
                 //request.setAttribute("orderDetails", dao.getOrder(Integer.parseInt(request.getParameter("id"))));
-                
+
                 //User user = (User) s.getAttribute("user");
-
                 //request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
-
                 getServletContext().getRequestDispatcher("/userOrdersPage.jsp").forward(request, response);
             }
-            
+
             //User user = (User) s.getAttribute("user");
             //request.setAttribute("usersOrders", dao.getUsersOrders(user.getId()));
             //getServletContext().getRequestDispatcher("/proOrderPage.jsp").forward(request, response);
             //ArrayList<Order> getUsersOrders
-            
-            
-            
         }
     }
 
@@ -96,8 +79,7 @@ public class usersPage extends HttpServlet
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -111,8 +93,7 @@ public class usersPage extends HttpServlet
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -122,8 +103,7 @@ public class usersPage extends HttpServlet
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo()
-    {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

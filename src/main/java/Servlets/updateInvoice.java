@@ -8,7 +8,6 @@ package Servlets;
 import DBConnection.DAO;
 import Data.Order;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,12 +18,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jacob Borg
  */
-@WebServlet(name = "updateInvoice", urlPatterns =
-{
-    "/updateInvoice"
-})
-public class updateInvoice extends HttpServlet
-{
+@WebServlet(name = "updateInvoice", urlPatterns
+        = {
+            "/updateInvoice"
+        })
+public class updateInvoice extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,36 +34,30 @@ public class updateInvoice extends HttpServlet
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         response.sendRedirect("adminOrder?id=" + Integer.parseInt(request.getParameter("orderID")));
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         DAO dao = new DAO();
         int amount = 0;
         Order order = dao.getOrder(Integer.parseInt(request.getParameter("orderID")));
-        for (int i = 0; i < order.getOrder().size(); i++)
-        {
+        for (int i = 0; i < order.getOrder().size(); i++) {
             amount = Integer.parseInt(request.getParameter(Integer.toString(i)));
-            if (order.getOrder().get(i).getCupCake().getAmount() != amount)
-            {
+            if (order.getOrder().get(i).getCupCake().getAmount() != amount) {
                 dao.updateOrderLine(order.getOrder().get(i).getOrderlineId(), amount);
             }
 
         }
-        
 
         processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -75,8 +67,7 @@ public class updateInvoice extends HttpServlet
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo()
-    {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

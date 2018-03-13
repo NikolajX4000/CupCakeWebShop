@@ -19,58 +19,50 @@ import javax.servlet.http.HttpSession;
  *
  * @author Hupra Laptop
  */
-@WebServlet(name = "createPiece", urlPatterns =
-{
-    "/createPiece"
-})
-public class createPiece extends HttpServlet
-{
+@WebServlet(name = "createPiece", urlPatterns
+        = {
+            "/createPiece"
+        })
+public class createPiece extends HttpServlet {
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
         DAO dao = new DAO();
         HttpSession s = request.getSession();
-        
+
         s.setAttribute("curPage", "adminOrder");
-        
-        if (s.getAttribute("user") == null)
-        {
+
+        if (s.getAttribute("user") == null) {
             response.sendRedirect("index.jsp");
-        } else
-        {
+        } else {
             User user = (User) s.getAttribute("user");
 
-            if (!user.getRole().equals("Admin"))
-            {
+            if (!user.getRole().equals("Admin")) {
                 response.sendRedirect("index.jsp");
-            } else
-            {
-                
-                if (request.getParameter("action") != null)
-                {
-                    if (request.getParameter("action").equals("newPiece"))
-                    {
+            } else {
 
-                        String name = (String)request.getParameter("name");
-                        double price = (double)Integer.parseInt(request.getParameter("price"));
-                        String type = (String)request.getParameter("type");
-                        
-                        if(type.equals("bottom")){
+                if (request.getParameter("action") != null) {
+                    if (request.getParameter("action").equals("newPiece")) {
+
+                        String name = (String) request.getParameter("name");
+                        double price = (double) Integer.parseInt(request.getParameter("price"));
+                        String type = (String) request.getParameter("type");
+
+                        if (type.equals("bottom")) {
                             dao.addBottom(name, price);
-                        }else if(type.equals("topping")){
+                        } else if (type.equals("topping")) {
                             dao.addTopping(name, price);
                         }
-                   }
+                    }
                 }
-                    
-                getServletContext().getRequestDispatcher("/createPiece.jsp").forward(request, response); 
-                    
-                }
+
+                getServletContext().getRequestDispatcher("/createPiece.jsp").forward(request, response);
+
             }
         }
-        
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -83,8 +75,7 @@ public class createPiece extends HttpServlet
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -98,8 +89,7 @@ public class createPiece extends HttpServlet
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -109,8 +99,7 @@ public class createPiece extends HttpServlet
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo()
-    {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
