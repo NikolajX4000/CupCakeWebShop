@@ -1,0 +1,64 @@
+@startuml
+
+class adminOrderPage << (S,orchid) >>
+class createPiece << (S,orchid) >>
+class shopPage << (S,orchid) >>
+class updateInvoice << (S,orchid) >>
+class usersPage << (S,orchid) >>
+class welcomePage << (S,orchid) >>
+class CupCake << (E,lightblue) >>
+class CupCakePiece << (E,lightblue) >>
+class Order << (E,lightblue) >>
+class Orderline << (E,lightblue) >>
+class User << (E,lightblue) >>
+class DAO << (D,red) >>
+class DBConnector << (D,red) >>
+
+adminOrderPage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
+adminOrderPage : # doGet(HttpServletRequest request, HttpServletResponse response)
+adminOrderPage : # doPost(HttpServletRequest request, HttpServletResponse response)
+adminOrderPage : + getServletInfo()
+createPiece : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
+createPiece : # doGet(HttpServletRequest request, HttpServletResponse response)
+createPiece : # doPost(HttpServletRequest request, HttpServletResponse response)
+createPiece : + getServletInfo()
+shopPage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
+shopPage : - addToOrder(HttpServletRequest request)
+shopPage : - updateCart(HttpServletRequest request)
+shopPage : - checkOut(HttpServletResponse response)
+shopPage : - totalPrice()
+shopPage : # doGet(HttpServletRequest request, HttpServletResponse response)
+shopPage : # doPost(HttpServletRequest request, HttpServletResponse response)
+shopPage : + getServletInfo()
+updateInvoice : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
+updateInvoice : # doGet(HttpServletRequest request, HttpServletResponse response)
+updateInvoice : # doPost(HttpServletRequest request, HttpServletResponse response)
+updateInvoice : + getServletInfo()
+usersPage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
+usersPage : # doGet(HttpServletRequest request, HttpServletResponse response)
+usersPage : # doPost(HttpServletRequest request, HttpServletResponse response)
+usersPage : + getServletInfo()
+welcomePage : # proccessRequest(HttpServletRequest request, HttpServletResponse response)
+welcomePage : # doGet(HttpServletRequest request, HttpServletResponse response)
+welcomePage : # doPost(HttpServletRequest request, HttpServletResponse response)
+welcomePage : + getServletInfo()
+
+adminOrderPage --> DAO
+adminOrderPage --> Order
+adminOrderPage --> User
+createPiece --> DAO
+createPiece --> User
+shopPage --> DAO
+shopPage --> CupCake
+shopPage --> CupCakePiece
+shopPage --> User
+updateInvoice --> DAO
+updateInvoice --> Order
+usersPage --> DAO
+usersPage --> User
+welcomePage --> DAO
+welcomePage --> DAO
+welcomePage --> User
+DAO --> DBConnector
+
+@enduml
