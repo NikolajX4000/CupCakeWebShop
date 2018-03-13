@@ -13,7 +13,7 @@ public class User {
     private String role;
 
     /**
-     * 
+     *
      * @param id the users id
      * @param username the users username
      * @param password the users password

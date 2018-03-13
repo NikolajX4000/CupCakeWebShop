@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Stephan
  */
-public class OrderLine {
+public class Orderline {
 
     private int userId;
     private int orderId;
@@ -28,7 +28,7 @@ public class OrderLine {
      * @param price the price per cupcake
      * @param amount the amount of cupcakes
      */
-    public OrderLine(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount) {
+    public Orderline(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount) {
         this.userId = userId;
         this.orderId = orderId;
         this.orderlineId = orderlineId;
@@ -91,7 +91,7 @@ public class OrderLine {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final OrderLine other = (OrderLine) obj;
+        final Orderline other = (Orderline) obj;
         if (this.orderlineId != other.orderlineId) {
             return false;
         }

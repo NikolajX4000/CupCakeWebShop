@@ -1,7 +1,10 @@
 package DBConnection;
 
+import Data.CupCake;
 import Data.CupCakePiece;
-import Data.*;
+import Data.Order;
+import Data.Orderline;
+import Data.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -360,7 +363,7 @@ public class DAO {
      * @return the order with specified id
      */
     public Order getOrder(int id) {
-        ArrayList<OrderLine> orderlines = new ArrayList();
+        ArrayList<Orderline> orderlines = new ArrayList();
         PreparedStatement stmt = null;
         Order order = null;
         String dateTime = null;
@@ -388,7 +391,7 @@ public class DAO {
                 double price = rs.getDouble("orderline.price");
                 int amount = rs.getInt("amount");
                 dateTime = rs.getString("orders.date");
-                orderlines.add(new OrderLine(userId, orderId, orderlineId, topping, bottom, price, amount));
+                orderlines.add(new Orderline(userId, orderId, orderlineId, topping, bottom, price, amount));
             }
             order = new Order(id, orderlines, dateTime);
         } catch (SQLException ex) {

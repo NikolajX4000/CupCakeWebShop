@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Order {
 
     private int id;
-    private ArrayList<OrderLine> orderlines;
+    private ArrayList<Orderline> orderlines;
     private double totalPrice;
     private String dateTime;
 
@@ -24,7 +24,7 @@ public class Order {
      * @param orderlines the orderlines in the orderlines
      * @param date the date of placing the orderlines
      */
-    public Order(int id, ArrayList<OrderLine> orderlines, String date) {
+    public Order(int id, ArrayList<Orderline> orderlines, String date) {
         this.id = id;
         this.orderlines = orderlines;
         dateTime = date;
@@ -32,7 +32,7 @@ public class Order {
     }
 
     private void setPrice() {
-        for (OrderLine ol : orderlines) {
+        for (Orderline ol : orderlines) {
             totalPrice += ol.getCupCake().getPrice();
         }
     }
@@ -49,7 +49,7 @@ public class Order {
      *
      * @return a list of the orderlines
      */
-    public ArrayList<OrderLine> getOrderlines() {
+    public ArrayList<Orderline> getOrderlines() {
         return orderlines;
     }
 
