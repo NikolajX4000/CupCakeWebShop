@@ -11,7 +11,7 @@ index.jsp --> welcomePage
 loginPage.jsp --> welcomePage
 welcomePage --> createUserPage.jsp
 welcomePage --> loginPage.jsp
-welcomePage --> shopPage
+
 
 state loggedIn {
 header.jsp --> logout.jsp
@@ -27,6 +27,7 @@ usersPage --> index.jsp
 usersPage --> proOrderPage.jsp
 usersPage --> userOrderPage.jsp
 userSpecificOrderPage.jsp --> proOrderPage.jsp
+welcomePage --> shopPage
 }
 
 state admin {
