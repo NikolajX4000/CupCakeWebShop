@@ -1,36 +1,44 @@
 @startuml
 
 title Navigations Diagram
+skinparam TitleFontSize 40
+skinparam shadowing false
 
 [*] --> index.jsp
-adminOrderPage --> index.jsp
-adminOrderPage --> adminOrdersPage.jsp
-adminOrderPage --> adminSpecificOrderPage.jsp
-adminOrdersPage.jsp --> adminSpecificOrderPage.jsp
-adminOrdersPage.jsp --> createPiece
-adminSpecificOrderPage.jsp --> adminOrdersPage.jsp
-createPiece --> createPiece.jsp
 createUserPage.jsp --> welcomePage
-header.jsp --> adminOrderPage
-header.jsp --> logout.jsp
-header.jsp --> usersPage
 header.jsp --> welcomePage
 index.jsp --> welcomePage
 loginPage.jsp --> welcomePage
+welcomePage --> createUserPage.jsp
+welcomePage --> loginPage.jsp
+welcomePage --> shopPage
+
+state loggedIn {
+header.jsp --> logout.jsp
+header.jsp --> usersPage
 logout.jsp --> welcomePage
 proOrderPage.jsp --> userSpecificOrderPage.jsp
 shopPage --> index.jsp
 shopPage --> shopPage.jsp
 shopPage --> usersPage
 shopPage.jsp --> shopPage
-updateInvoice --> adminOrderPage
 userOrderPage.jsp --> userSpecificOrderPage.jsp
 usersPage --> index.jsp
 usersPage --> proOrderPage.jsp
 usersPage --> userOrderPage.jsp
 userSpecificOrderPage.jsp --> proOrderPage.jsp
-welcomePage --> createUserPage.jsp
-welcomePage --> loginPage.jsp
-welcomePage --> shopPage
+}
+
+state admin {
+adminOrderPage --> adminOrdersPage.jsp
+adminOrderPage --> adminSpecificOrderPage.jsp
+adminOrderPage --> index.jsp
+adminOrdersPage.jsp --> adminSpecificOrderPage.jsp
+adminOrdersPage.jsp --> createPiece
+adminSpecificOrderPage.jsp --> adminOrdersPage.jsp
+createPiece --> createPiece.jsp
+header.jsp --> adminOrderPage
+updateInvoice --> adminOrderPage
+}
 
 @enduml
