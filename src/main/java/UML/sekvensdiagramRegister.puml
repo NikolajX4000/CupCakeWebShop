@@ -1,0 +1,22 @@
+@startuml
+
+title "Register - Sequence Diagram"
+
+actor User
+boundary createUserPage.jsp
+boundary login.jsp
+participant welcomePage
+participant DAO
+database ShopDatabase
+
+User -> createUserPage.jsp : username & password & password2
+createUserPage.jsp -> welcomePage: http POST register
+welcomePage -> DAO: validate()
+DAO -> ShopDatabase: executeQuery()
+ShopDatabase -> DAO: resultset
+DAO -> DAO: validate resultset
+DAO -> welcomePage: OK
+welcomePage -> login.jsp: redirect
+login.jsp -> User: login form
+
+@enduml
