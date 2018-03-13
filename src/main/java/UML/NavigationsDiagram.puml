@@ -3,8 +3,13 @@
 title Navigations Diagram
 
 [*] --> index.jsp
+adminOrderPage --> index.jsp
+adminOrderPage --> adminOrdersPage.jsp
+adminOrderPage --> adminSpecificOrderPage.jsp
 adminOrdersPage.jsp --> adminSpecificOrderPage.jsp
+adminOrdersPage.jsp --> createPiece
 adminSpecificOrderPage.jsp --> adminOrdersPage.jsp
+createPiece --> createPiece.jsp
 createUserPage.jsp --> welcomePage
 header.jsp --> adminOrderPage
 header.jsp --> logout.jsp
@@ -12,11 +17,13 @@ header.jsp --> usersPage
 header.jsp --> welcomePage
 index.jsp --> welcomePage
 loginPage.jsp --> welcomePage
+logout.jsp --> welcomePage
 proOrderPage.jsp --> userSpecificOrderPage.jsp
 shopPage --> index.jsp
 shopPage --> shopPage.jsp
 shopPage --> usersPage
 shopPage.jsp --> shopPage
+updateInvoice --> adminOrderPage
 userOrderPage.jsp --> userSpecificOrderPage.jsp
 usersPage --> index.jsp
 usersPage --> proOrderPage.jsp
@@ -25,6 +32,5 @@ userSpecificOrderPage.jsp --> proOrderPage.jsp
 welcomePage --> createUserPage.jsp
 welcomePage --> loginPage.jsp
 welcomePage --> shopPage
-welcomePage --> welcomePage
 
 @enduml
