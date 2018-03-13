@@ -20,11 +20,3 @@ welcomePage -> login.jsp: redirect
 login.jsp -> User: login form
 
 @enduml
-
-
-@startuml
-
-
-
-
-@enduml
