@@ -1,5 +1,7 @@
 @startuml
 
+skinparam shadowing false
+
 package DBConnection{
 class DAO << (J,red) >>
 class DBConnector << (J,red) >>
