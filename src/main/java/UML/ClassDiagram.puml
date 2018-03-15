@@ -14,20 +14,20 @@ CupCake : - CupCakePiece bottom
 CupCake : - CupCakePiece topping
 CupCake : - double price
 CupCake : - int amount
-CupCake : + CupCake(CupCakePiece bottom, CupCakePiece topping, int amount)
+CupCake : + CupCake()
 CupCake : + CupCakePiece getBottom()
 CupCake : + CupCakePiece getTopping()
 CupCake : + double getPrice()
 CupCake : + int getAmount()
 CupCake : + int hashCode()
 CupCake : + boolean equals()
-CupCake : + void addAmount(int amount)
-CupCake : + void setAmount(int amount)
+CupCake : + void addAmount()
+CupCake : + void setAmount()
 CupCake : + String toString()
 CupCakePiece : - int id
 CupCakePiece : - String flavor
 CupCakePiece : - double price
-CupCakePiece : + CupCakePiece(int id, String flavor, double price)
+CupCakePiece : + CupCakePiece()
 CupCakePiece : + int getId()
 CupCakePiece : + String getFlavor()
 CupCakePiece : + double getPrice()
@@ -38,7 +38,7 @@ Order : - int id
 Order : - ArrayList<Orderline> orderlines
 Order : - double totalPrice
 Order : - String dateTime
-Order : + Order(int id, ArrayList<Orderline> orderlines, double totalPrice, String dateTime)
+Order : + Order()
 Order : - void setPrice()
 Order : + int getId()
 Order : + ArrayList<Orderlines> getOrderlines()
@@ -48,7 +48,7 @@ Orderline : - int userId
 Orderline : - int orderId
 Orderline : - int orderLineId
 Orderline : - CupCake cupCake
-Orderline : + OrderLine(int userId, int orderId, int orderlineId, CupCakePiece topping, CupCakePiece bottom, double price, int amount)
+Orderline : + OrderLine()
 Orderline : + int getUserId()
 Orderline : + int getOrderId()
 Orderline : + int getOrderlineId()
@@ -61,7 +61,7 @@ User : - String username
 User : - String password
 User : - double balance
 User : - String role
-User : + User(int id, String username, String password, double balance, String role)
+User : + User()
 User : + String toString()
 User : + int getId()
 User : + String getUsername()
@@ -69,27 +69,27 @@ User : + String getPassword()
 User : + double getBalance()
 User : + String getRole()'
 DAO : - DBConnector conn
-DAO : + User getUser(String u)
-DAO : + User getUser(int id)
+DAO : + User getUser()
+DAO : + User getUser()
 DAO : + ArrayList<User> getUsers()
-DAO : + boolean createCustomer(String username, String password1, String password2)
-DAO : + boolean createAdmin(String username, String password1, String password2)
+DAO : + boolean createCustomer()
+DAO : + boolean createAdmin()
 DAO : + ArrayList<CupCakePiece> getToppings()
 DAO : + ArrayList<CupCakePiece> getBottoms()
-DAO : + CupCakePiece getTopping(int id)
-DAO : + CupCakePiece getBottom(int id)
-DAO : + User login(String username, String password)
-DAO : + Order getOrder(int id)
-DAO : + ArrayList<Order> getUsersOrders(int id)
-DAO : + ArrayList<Order> getAllOrders(int id)
-DAO : + int insertOrder(ArrayList<CupCake> cart, User user)
-DAO : + boolean addTopping(String flavor, double price)
-DAO : + boolean addBottom(String flavor, double price)
-DAO : + boolean changeOrderlineAmount(int id, int amount)
-DAO : + String getUserById(int id)
-DAO : + double deposit(int id, double value)
-DAO : + boolean withdrawal(int id, double value)
-DAO : + void updateOrderLine(int orderlineId, int amount)
+DAO : + CupCakePiece getTopping()
+DAO : + CupCakePiece getBottom()
+DAO : + User login()
+DAO : + Order getOrder()
+DAO : + ArrayList<Order> getUsersOrders()
+DAO : + ArrayList<Order> getAllOrders()
+DAO : + int insertOrder()
+DAO : + boolean addTopping()
+DAO : + boolean addBottom()
+DAO : + boolean changeOrderlineAmount()
+DAO : + String getUserById()
+DAO : + double deposit()
+DAO : + boolean withdrawal()
+DAO : + void updateOrderLine()
 DBConnector : - Connection conn
 DBConnector : - String IP
 DBConnector : - int PORT
