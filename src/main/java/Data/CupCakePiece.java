@@ -10,10 +10,11 @@ public class CupCakePiece {
     private double price;
 
     /**
-     *
-     * @param id the id of the cupcakepiece
-     * @param flavor the flavor of the cupcakepiece
-     * @param price the price of the cupcakepiece
+     * Constructer.
+     * 
+     * @param id the id of the cupcakepiece, should be not null
+     * @param flavor the flavor of the cupcakepiece, should be not null
+     * @param price the price of the cupcakepiece, should be not null
      */
     public CupCakePiece(int id, String flavor, double price) {
         this.id = id;
@@ -22,7 +23,8 @@ public class CupCakePiece {
     }
 
     /**
-     *
+     * Returns the id.
+     * 
      * @return the id of the cupcakepiece
      */
     public int getId() {
@@ -30,7 +32,8 @@ public class CupCakePiece {
     }
 
     /**
-     *
+     * Returns the flavor.
+     * 
      * @return the the flavor of the cupcakepiece
      */
     public String getFlavor() {
@@ -38,7 +41,8 @@ public class CupCakePiece {
     }
 
     /**
-     *
+     * Returns the price.
+     * 
      * @return the price of the cupcakepiece
      */
     public double getPrice() {
