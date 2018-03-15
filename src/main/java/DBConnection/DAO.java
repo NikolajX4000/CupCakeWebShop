@@ -21,10 +21,10 @@ public class DAO {
     private DBConnector conn = new DBConnector();
 
     /**
-     * takes a username and returns the user whit that username
-     *
-     * @param u username of the desired user
-     * @return the user with specified username
+     * Takes a username and returns the user with that username.
+     * 
+     * @param u the username of the desired user, should be not null
+     * @return the user with specified username or null
      */
     public User getUser(String u) {
         PreparedStatement stmt = null;
@@ -57,10 +57,10 @@ public class DAO {
     }
 
     /**
-     * takes an user id and returns the user with that id
+     * Takes an user id and returns the user with that id
      *
-     * @param id id of the desired user
-     * @return the user with specified id
+     * @param id the id of the desired user, should be not null
+     * @return the user with specified id or null
      */
     public User getUser(int id) {
         PreparedStatement stmt = null;
@@ -92,7 +92,8 @@ public class DAO {
     }
 
     /**
-     *
+     * Returns a list containing all the users.
+     * 
      * @return a list of all the users
      */
     public ArrayList<User> getUsers() {
@@ -125,11 +126,11 @@ public class DAO {
     }
 
     /**
-     * creates a user with role customer
+     * Creates a user with role customer.
      *
-     * @param username the username of the new user
-     * @param password1 the password of the new user
-     * @param password2 verification of the password
+     * @param username the username of the new user, should be not null
+     * @param password1 the password of the new user, should be not null
+     * @param password2 verification of the password, should be not null
      * @return true if successfully created a new user or false if failed to
      * create a new user
      */
@@ -159,11 +160,11 @@ public class DAO {
     }
 
     /**
-     * creates a user with role admin
+     * Creates a user with role admin.
      *
-     * @param username the username of the new user
-     * @param password1 the password of the new user
-     * @param password2 verification of the password
+     * @param username the username of the new user, should be not null
+     * @param password1 the password of the new user, should be not null
+     * @param password2 verification of the password, should be not null
      * @return true if successfully created a new user or false if failed to
      * create a new user
      */
@@ -193,7 +194,8 @@ public class DAO {
     }
 
     /**
-     *
+     * Returns a list containing all available toppings.
+     * 
      * @return a list of all toppings
      */
     public ArrayList<CupCakePiece> getToppings() {
@@ -224,7 +226,8 @@ public class DAO {
     }
 
     /**
-     *
+     * Returns a list containing all available bottoms.
+     * 
      * @return a list of all bottoms
      */
     public ArrayList<CupCakePiece> getBottoms() {
@@ -255,10 +258,10 @@ public class DAO {
     }
 
     /**
-     * takes a topping id and returns the topping with that id
+     * Takes a topping id and returns the topping with that id.
      *
-     * @param id id of the desired topping
-     * @return the topping with specified id
+     * @param id id of the desired topping, should be not null
+     * @return the topping with specified id or null
      */
     public CupCakePiece getTopping(int id) {
         String topping = "";
@@ -289,10 +292,10 @@ public class DAO {
     }
 
     /**
-     * takes a bottom id and returns the bottom with that id
+     * Takes a bottom id and returns the bottom with that id.
      *
-     * @param id id of the desired bottom
-     * @return the bottom with specified id
+     * @param id id of the desired bottom, should be not null
+     * @return the bottom with specified id or null
      */
     public CupCakePiece getBottom(int id) {
         String bottom = "";
@@ -323,11 +326,11 @@ public class DAO {
     }
 
     /**
-     * logging with user credentials
+     * Logging with user credentials.
      *
-     * @param username the username of the user trying to sign in
-     * @param password the password of the user trying to sign in
-     * @return the user with the specified credentials
+     * @param username the username of the user trying to sign in, should be not null
+     * @param password the password of the user trying to sign in, should be not null
+     * @return the user with the specified credentials or null
      */
     public User login(String username, String password) {
         PreparedStatement stmt = null;
@@ -356,10 +359,10 @@ public class DAO {
     }
 
     /**
-     * takes an order id and returns the order with that id
+     * Takes an order id and returns the order with that id.
      *
-     * @param id the id of the desired order
-     * @return the order with specified id
+     * @param id the id of the desired order, should be not null
+     * @return the order with specified id or null
      */
     public Order getOrder(int id) {
         ArrayList<Orderline> orderlines = new ArrayList();
@@ -408,9 +411,9 @@ public class DAO {
     }
 
     /**
-     * takes an user id and returns a list with that users orders
+     * Takes an user id and returns a list with that users orders.
      *
-     * @param id the id of the user
+     * @param id the id of the user, should be not null
      * @return a list with specified users orders
      */
     public ArrayList<Order> getUsersOrders(int id) {
