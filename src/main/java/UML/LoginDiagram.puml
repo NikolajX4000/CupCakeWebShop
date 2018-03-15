@@ -1,0 +1,21 @@
+@startuml
+skinparam backgroundColor wihte
+skinparam Shadowing false
+
+Title Logging in
+State loginPage.jsp
+State "Error loginPage.jsp" as error
+State LoggedIn
+
+note right of LoggedIn
+Username and role
+stored in session
+end note
+
+[*] -> loginPage.jsp
+loginPage.jsp --> LoggedIn : user and pw OK
+error --> loginPage.jsp : try-again
+loginPage.jsp --> error : user or pw not OK
+LoggedIn --> [*]
+
+@enduml
