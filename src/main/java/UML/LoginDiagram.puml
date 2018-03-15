@@ -8,8 +8,8 @@ State "Error loginPage.jsp" as error
 State LoggedIn
 
 note right of LoggedIn
-Username and role
-stored in session
+User stored
+in session
 end note
 
 [*] -> loginPage.jsp
