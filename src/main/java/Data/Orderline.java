@@ -13,7 +13,8 @@ public class Orderline {
     private CupCake cupCake;
 
     /**
-     *
+     * Constructor
+     * 
      * @param userId the id of the customer
      * @param orderId the id of the order
      * @param orderlineId the orderlines id
@@ -30,7 +31,8 @@ public class Orderline {
     }
 
     /**
-     *
+     * Returns the user id.
+     * 
      * @return the id of the customer
      */
     public int getUserId() {
@@ -38,7 +40,8 @@ public class Orderline {
     }
 
     /**
-     *
+     * Returns the order id.
+     * 
      * @return the id of the order
      */
     public int getOrderId() {
@@ -46,7 +49,8 @@ public class Orderline {
     }
 
     /**
-     *
+     * Returns the orderline id.
+     * 
      * @return the orderlines id
      */
     public int getOrderlineId() {
@@ -54,7 +58,8 @@ public class Orderline {
     }
 
     /**
-     *
+     * Returns the cupcake.
+     * 
      * @return the cupcake
      */
     public CupCake getCupCake() {
