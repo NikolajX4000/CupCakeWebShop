@@ -2,17 +2,13 @@
 
 skinparam shadowing false
 
-package DBConnection{
 class DAO << (J,red) >>
 class DBConnector << (J,red) >>
-}
-package Data{
 class CupCake << (E,lightblue) >>
 class CupCakePiece << (E,lightblue) >>
 class Order << (E,lightblue) >>
 class Orderline << (E,lightblue) >>
 class User << (E,lightblue) >>
-}
 
 CupCake : - CupCakePiece bottom
 CupCake : - CupCakePiece topping
@@ -103,9 +99,9 @@ DBConnector : - String PASSWORD
 DBConnector : + DBConnector()
 DBConnector : + Connection getConnection()
 
-CupCake "1" -- "2" CupCakePiece
-Order "1" -- "*" Orderline
-Orderline "1" -- "1" CupCake
+CupCake "*" -left- "2" CupCakePiece
+Order "1" -right- "*" Orderline
+Orderline "*" -- "1" CupCake
 User "1" -- "*" Order
 User "1" -- "*" Orderline
 DAO --> DBConnector
