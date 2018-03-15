@@ -13,10 +13,11 @@ public class Order {
     private String dateTime;
 
     /**
-     *
-     * @param id the orders id
-     * @param orderlines the orderlines in the orderlines
-     * @param date the date of placing the orderlines
+     * Constructor
+     * 
+     * @param id the orders id, should be not null
+     * @param orderlines the orderlines in the orderlines, should be not null
+     * @param date the date of placing the orderlines, should be not null
      */
     public Order(int id, ArrayList<Orderline> orderlines, String date) {
         this.id = id;
@@ -32,7 +33,8 @@ public class Order {
     }
 
     /**
-     *
+     * Returns the id.
+     * 
      * @return the orders id
      */
     public int getId() {
@@ -40,7 +42,8 @@ public class Order {
     }
 
     /**
-     *
+     * Returns the orderlines
+     * 
      * @return a list of the orderlines
      */
     public ArrayList<Orderline> getOrderlines() {
@@ -48,7 +51,8 @@ public class Order {
     }
 
     /**
-     *
+     * Returns the price
+     * 
      * @return the total price of the orderlines
      */
     public double getTotalPrice() {
@@ -56,7 +60,8 @@ public class Order {
     }
 
     /**
-     *
+     * Returns the time
+     * 
      * @return the time of placing the orderlines
      */
     public String getDateTime() {
