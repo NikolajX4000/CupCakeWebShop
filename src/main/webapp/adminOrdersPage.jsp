@@ -59,9 +59,9 @@ ArrayList<Order> orders = (ArrayList<Order>)request.getAttribute("allOrders");
                     
                     
                     out.println("<td>");
-                    if(!o.getOrder().isEmpty()){
+                    if(!o.getOrderlines().isEmpty()){
                         
-                        out.println(o.getOrder().get(0).getUserId());
+                        out.println(o.getOrderlines().get(0).getUserId());
                         
                     }
                     out.println("</td>");
