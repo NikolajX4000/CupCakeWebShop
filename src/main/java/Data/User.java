@@ -12,12 +12,13 @@ public class User {
     private String role;
 
     /**
-     *
-     * @param id the users id
-     * @param username the users username
-     * @param password the users password
-     * @param balance the users balance
-     * @param role the users role
+     * Constructor.
+     * 
+     * @param id the users id, should be not null
+     * @param username the users username, should be not null
+     * @param password the users password, should be not null
+     * @param balance the users balance, should be not null
+     * @param role the users role, should be not null
      */
     public User(int id, String username, String password, double balance, String role) {
         this.id = id;
@@ -33,7 +34,8 @@ public class User {
     }
 
     /**
-     *
+     * Returns the id.
+     * 
      * @return the users id
      */
     public int getId() {
@@ -41,7 +43,8 @@ public class User {
     }
 
     /**
-     *
+     * Returns the username.
+     * 
      * @return the users username
      */
     public String getUsername() {
@@ -49,7 +52,8 @@ public class User {
     }
 
     /**
-     *
+     * Returns the password.
+     * 
      * @return the users password
      */
     public String getPassword() {
@@ -57,7 +61,8 @@ public class User {
     }
 
     /**
-     *
+     * Returns the balance.
+     * 
      * @return the users balance
      */
     public double getBalance() {
@@ -65,7 +70,8 @@ public class User {
     }
 
     /**
-     *
+     * Returns the role.
+     * 
      * @return the users role
      */
     public String getRole() {
