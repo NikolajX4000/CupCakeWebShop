@@ -4,18 +4,17 @@ skinparam Shadowing false
 
 Title Logging in
 State loginPage.jsp
-State "Error loginPage.jsp" as error
-State LoggedIn
+State "Login Error" as error
+State "ShopPage.jsp" as LoggedIn
 
 note right of LoggedIn
-User stored
-in session
+User logged in
+and stored in session
 end note
 
 [*] -> loginPage.jsp
 loginPage.jsp --> LoggedIn : user and pw OK
-error --> loginPage.jsp : try-again
 loginPage.jsp --> error : user or pw not OK
+error --> loginPage.jsp : try-again
 LoggedIn --> [*]
-
 @enduml
