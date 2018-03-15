@@ -446,7 +446,8 @@ public class DAO {
     }
 
     /**
-     *
+     * Returns a list containing all orders.
+     * 
      * @return a list of all orders
      */
     public ArrayList<Order> getAllOrders() {
@@ -477,10 +478,10 @@ public class DAO {
     }
 
     /**
-     * creates a new order and the orders orderlines
+     * Creates a new order and the orders orderlines.
      *
-     * @param cart a list of all the orders orderlines
-     * @param user the user that made the order
+     * @param cart a list of all the orders orderlines, should be not null
+     * @param user the user that made the order, should be not null
      * @return the id of the new order
      */
     public int insertOrder(ArrayList<CupCake> cart, User user) {
@@ -520,10 +521,10 @@ public class DAO {
     }
 
     /**
-     * adds a new topping with specified flavor and price
+     * Adds a new topping with specified flavor and price.
      *
-     * @param flavor the flavor of the new topping
-     * @param price the price of the new topping
+     * @param flavor the flavor of the new topping, should be not null
+     * @param price the price of the new topping, should be not null
      * @return true if successfully created a new topping or false if failed to
      * create new topping
      */
@@ -551,10 +552,10 @@ public class DAO {
     }
 
     /**
-     * adds a new bottom with specified flavor and price
+     * Adds a new bottom with specified flavor and price.
      *
-     * @param flavor the flavor of the new bottom
-     * @param price the price of the new bottom
+     * @param flavor the flavor of the new bottom, should be not null
+     * @param price the price of the new bottom, should be not null
      * @return true if successfully created a new bottom or false if failed to
      * create new bottom
      */
@@ -582,11 +583,11 @@ public class DAO {
     }
 
     /**
-     * changes the amout on the orderline with specified id to the specified
-     * amount
+     * Changes the amout on the orderline with specified id to the specified
+     * amount.
      *
-     * @param id the id of the desired orderline
-     * @param amount the desired amount
+     * @param id the id of the desired orderline, should be not null
+     * @param amount the desired amount, should be not null
      * @return true if successfully updated or false if failed to update
      */
     public boolean changeOrderlineAmount(int id, int amount) {
@@ -613,10 +614,10 @@ public class DAO {
     }
 
     /**
-     * takes an user id and returns the username of that user
+     * Takes an user id and returns the username of that user.
      *
-     * @param id the id of the desired user
-     * @return the username of the desired user
+     * @param id the id of the desired user, should be not null
+     * @return the username of the desired user or null
      */
     public String getUserById(int id) {
         PreparedStatement stmt = null;
@@ -646,10 +647,10 @@ public class DAO {
     }
 
     /**
-     * add the specified amount to the balance of the user with specified id
+     * Add the specified amount to the balance of the user with specified id.
      *
-     * @param id the id of the desired user
-     * @param value the value to be added to the balance
+     * @param id the id of the desired user, should be not null
+     * @param value the value to be added to the balance, should be not null
      * @return the new balance value
      */
     public double deposit(int id, double value) {
@@ -677,12 +678,12 @@ public class DAO {
     }
 
     /**
-     * subtract the specified amount from the balance of the user with specified
-     * id
+     * Subtract the specified amount from the balance of the user with specified
+     * id.
      *
-     * @param id the id of the desired user
-     * @param value the value to be subtracted from the balance
-     * @return the new balance value
+     * @param id the id of the desired user, should be not null
+     * @param value the value to be subtracted from the balance, should be not null
+     * @return true if the users balance bigger than value or false if value bigger than the users balance
      */
     public boolean withdrawal(int id, double value) {
         PreparedStatement stmt = null;
@@ -713,11 +714,11 @@ public class DAO {
     }
 
     /**
-     * changes the amount on the orderline with specified id to the specified
-     * amount
+     * Changes the amount on the orderline with specified id to the specified
+     * amount.
      *
-     * @param orderlineId the id of the desired orderline
-     * @param amount the desired amount
+     * @param orderlineId the id of the desired orderline, should be not null
+     * @param amount the desired amount, should be not null
      */
     public void updateOrderLine(int orderlineId, int amount) {
         PreparedStatement stmt = null;
