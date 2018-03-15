@@ -13,10 +13,11 @@ public class CupCake {
     private int amount;
 
     /**
-     *
-     * @param bottom the bottom of the cupcake
-     * @param topping the topping of the cupcake
-     * @param amount the amount of cupcakes
+     * Constructor
+     * 
+     * @param bottom the bottom of the cupcake, should be not null
+     * @param topping the topping of the cupcake, should be not null
+     * @param amount the amount of cupcakes, should be not null
      */
     public CupCake(CupCakePiece bottom, CupCakePiece topping, int amount) {
         this.bottom = bottom;
@@ -26,7 +27,8 @@ public class CupCake {
     }
 
     /**
-     *
+     * Returns the bottom
+     * 
      * @return the bottom of the cupcake
      */
     public CupCakePiece getBottom() {
@@ -34,7 +36,8 @@ public class CupCake {
     }
 
     /**
-     *
+     * Returns the topping
+     * 
      * @return the topping of the cupcake
      */
     public CupCakePiece getTopping() {
@@ -42,7 +45,8 @@ public class CupCake {
     }
 
     /**
-     *
+     * Returns the price
+     * 
      * @return the price of the cupcake
      */
     public double getPrice() {
@@ -50,7 +54,8 @@ public class CupCake {
     }
 
     /**
-     *
+     * Returns the amount
+     * 
      * @return the amount of cupcakes
      */
     public int getAmount() {
@@ -87,18 +92,18 @@ public class CupCake {
     }
 
     /**
-     * adds to the amount of cupcakes
+     * Adds to the amount of cupcakes.
      *
-     * @param amount the amount to be added
+     * @param amount the amount to be added, should be not null
      */
     public void addAmount(int amount) {
         this.amount += amount;
     }
 
     /**
-     * set the amount of cupcake
+     * Set the amount of cupcake
      *
-     * @param amount the amount to be set
+     * @param amount the amount to be set, should be not null
      */
     public void setAmount(int amount) {
         this.amount = amount;
