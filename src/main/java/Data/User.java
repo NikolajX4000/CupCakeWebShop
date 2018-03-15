@@ -1,8 +1,7 @@
 package Data;
 
 /**
- *
- * @author super
+ * @author Daniel Lindholm, Jacob Borg, Nikolaj Thorsen Nielsen, Stephan Marcus Duelund Djurhuus
  */
 public class User {
 

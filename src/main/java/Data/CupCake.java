@@ -3,8 +3,7 @@ package Data;
 import java.util.Objects;
 
 /**
- *
- * @author super
+ * @author Daniel Lindholm, Jacob Borg, Nikolaj Thorsen Nielsen, Stephan Marcus Duelund Djurhuus
  */
 public class CupCake {
 
