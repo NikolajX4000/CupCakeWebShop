@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="529px" preserveAspectRatio="none" style="width:698px;height:529px;" version="1.1" viewBox="0 0 698 529" width="698px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="198" x="256.75" y="24.5332">"Login - Sequence Diagram"</text>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="25" x2="25" y1="115.2188" y2="451.7344"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="178" x2="178" y1="115.2188" y2="451.7344"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="280" x2="280" y1="115.2188" y2="451.7344"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="375" x2="375" y1="115.2188" y2="451.7344"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="474" x2="474" y1="115.2188" y2="451.7344"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="557" x2="557" y1="115.2188" y2="451.7344"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="669.5" x2="669.5" y1="115.2188" y2="451.7344"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="8" y="112.1426">User</text>
+        <ellipse cx="25.5" cy="44.6094" fill="#FEFECE" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M25.5,52.6094 L25.5,79.6094 M12.5,60.6094 L38.5,60.6094 M25.5,79.6094 L12.5,94.6094 M25.5,79.6094 L38.5,94.6094 " fill="#FEFECE" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="8" y="465.2676">User</text>
+        <ellipse cx="25.5" cy="478.3438" fill="#FEFECE" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M25.5,486.3438 L25.5,513.3438 M12.5,494.3438 L38.5,494.3438 M25.5,513.3438 L12.5,528.3438 M25.5,513.3438 L38.5,528.3438 " fill="#FEFECE" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="85" x="133" y="112.1426">loginPage.jsp</text>
+        <path d="M158,69.6094 L158,93.6094 M158,81.6094 L175,81.6094 " fill="#FEFECE" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <ellipse cx="187" cy="81.6094" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="85" x="133" y="465.2676">loginPage.jsp</text>
+        <path d="M158,472.3438 L158,496.3438 M158,484.3438 L175,484.3438 " fill="#FEFECE" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <ellipse cx="187" cy="484.3438" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="86" x="234" y="112.1426">shopPage.jsp</text>
+        <path d="M259.5,69.6094 L259.5,93.6094 M259.5,81.6094 L276.5,81.6094 " fill="#FEFECE" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <ellipse cx="288.5" cy="81.6094" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="86" x="234" y="465.2676">shopPage.jsp</text>
+        <path d="M259.5,472.3438 L259.5,496.3438 M259.5,484.3438 L276.5,484.3438 " fill="#FEFECE" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <ellipse cx="288.5" cy="484.3438" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="336" y="82.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="64" x="343" y="104.1426">shopPage</text>
+        <rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="336" y="450.7344"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="64" x="343" y="472.2676">shopPage</text>
+        <rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="101" x="424" y="82.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="431" y="104.1426">welcomePage</text>
+        <rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="101" x="424" y="450.7344"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="431" y="472.2676">welcomePage</text>
+        <rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="535" y="82.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="542" y="104.1426">DAO</text>
+        <rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="535" y="450.7344"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="542" y="472.2676">DAO</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="636.5" y="112.1426">Database</text>
+        <path d="M652,61.6094 C652,51.6094 670,51.6094 670,51.6094 C670,51.6094 688,51.6094 688,61.6094 L688,87.6094 C688,97.6094 670,97.6094 670,97.6094 C670,97.6094 652,97.6094 652,87.6094 L652,61.6094 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/>
+        <path d="M652,61.6094 C652,71.6094 670,71.6094 670,71.6094 C670,71.6094 688,71.6094 688,61.6094 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="636.5" y="465.2676">Database</text>
+        <path d="M652,478.3438 C652,468.3438 670,468.3438 670,468.3438 C670,468.3438 688,468.3438 688,478.3438 L688,504.3438 C688,514.3438 670,514.3438 670,514.3438 C670,514.3438 652,514.3438 652,504.3438 L652,478.3438 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/>
+        <path d="M652,478.3438 C652,488.3438 670,488.3438 670,488.3438 C670,488.3438 688,488.3438 688,478.3438 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/>
+        <polygon fill="#A80036" points="166.5,143.2188,176.5,147.2188,166.5,151.2188,170.5,147.2188" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="25.5" x2="172.5" y1="147.2188" y2="147.2188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="129" x="32.5" y="142.7139">username &amp; password</text>
+        <polygon fill="#A80036" points="462.5,173.5703,472.5,177.5703,462.5,181.5703,466.5,177.5703" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="178.5" x2="468.5" y1="177.5703" y2="177.5703"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="185.5" y="173.0654">http POST login</text>
+        <polygon fill="#A80036" points="545,203.9219,555,207.9219,545,211.9219,549,207.9219" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="474.5" x2="551" y1="207.9219" y2="207.9219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="51" x="481.5" y="203.417">validate()</text>
+        <polygon fill="#A80036" points="658,234.2734,668,238.2734,658,242.2734,662,238.2734" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="557" x2="664" y1="238.2734" y2="238.2734"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="89" x="564" y="233.7686">executeQuery()</text>
+        <polygon fill="#A80036" points="568,264.625,558,268.625,568,272.625,564,268.625" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="562" x2="669" y1="268.625" y2="268.625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="574" y="264.1201">resultset</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="557" x2="599" y1="299.3281" y2="299.3281"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="599" x2="599" y1="299.3281" y2="312.3281"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="558" x2="599" y1="312.3281" y2="312.3281"/>
+        <polygon fill="#A80036" points="568,308.3281,558,312.3281,568,316.3281,564,312.3281" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="97" x="564" y="294.4717">validate resultset</text>
+        <polygon fill="#A80036" points="485.5,338.3281,475.5,342.3281,485.5,346.3281,481.5,342.3281" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="479.5" x2="556" y1="342.3281" y2="342.3281"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="19" x="491.5" y="337.8232">OK</text>
+        <polygon fill="#A80036" points="386,368.6797,376,372.6797,386,376.6797,382,372.6797" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="380" x2="473.5" y1="372.6797" y2="372.6797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="392" y="368.1748">redirect</text>
+        <polygon fill="#A80036" points="291,399.0313,281,403.0313,291,407.0313,287,403.0313" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="285" x2="374" y1="403.0313" y2="403.0313"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="297" y="398.5264">forward</text>
+        <polygon fill="#A80036" points="36.5,429.3828,26.5,433.3828,36.5,437.3828,32.5,433.3828" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="30.5" x2="279" y1="433.3828" y2="433.3828"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="42.5" y="428.8779">Welcome</text>
+        <!--
+@startuml
+
+skinparam Shadowing false
+
+title "Login - Sequence Diagram"
+
+actor User
+boundary loginPage.jsp as login
+boundary shopPage.jsp as shop
+participant shopPage as shopser
+participant welcomePage as welcome
+participant DAO
+database Database
+
+User -> login : username & password
+login -> welcome: http POST login
+welcome -> DAO: validate()
+DAO -> Database: executeQuery()
+Database -> DAO: resultset
+DAO -> DAO: validate resultset
+DAO -> welcome: OK
+welcome -> shopser: redirect
+shopser -> shop: forward
+shop -> User: Welcome
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 18:18:59 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_144-b01
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: da
+Country: DK
+-->
+    </g>
+</svg>

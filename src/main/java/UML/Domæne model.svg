@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="798px" preserveAspectRatio="none" style="width:657px;height:798px;" version="1.1" viewBox="0 0 657 798" width="657px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <!--class DAO-->
+        <rect fill="#FEFECE" height="352.3906" style="stroke: #A80036; stroke-width: 1.5;" width="417" x="239.5" y="8"/>
+        <ellipse cx="431.25" cy="24" fill="#FF0000" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M434.0469,21.1406 L434.0469,26.2813 Q434.0469,27.2656 433.7344,27.8281 Q433.2344,28.7188 432.2891,29.2344 Q431.3438,29.75 430.3125,29.75 Q428.9688,29.75 426.6563,28.625 L426.6563,25.8281 Q426.6563,25.2031 426.8984,24.9453 Q427.1406,24.6875 427.5156,24.6875 Q427.8906,24.6875 428.125,24.9453 Q428.3594,25.2031 428.3594,25.8281 L428.3594,27.4844 Q429.5313,28.0469 430.3594,28.0469 Q430.8125,28.0469 431.2813,27.8438 Q431.75,27.6406 431.9922,27.3594 Q432.2344,27.0781 432.3125,26.7969 Q432.3438,26.6563 432.3438,26.0938 L432.3438,21.1406 L430.2813,21.1406 Q429.6719,21.1406 429.4063,20.9063 Q429.1406,20.6719 429.1406,20.2813 Q429.1406,19.9063 429.4063,19.6719 Q429.6719,19.4375 430.2813,19.4375 L435.0469,19.4375 Q435.6563,19.4375 435.9219,19.6719 Q436.1875,19.9063 436.1875,20.2813 Q436.1875,20.6719 435.9219,20.9063 Q435.6563,21.1406 435.0469,21.1406 L434.0469,21.1406 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="25" x="451.75" y="28.9102">DAO</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="240.5" x2="655.5" y1="40" y2="40"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="247.5" y="49.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="91" x="259.5" y="55.4189">DBConnector conn</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="240.5" x2="655.5" y1="61.8359" y2="61.8359"/>
+        <ellipse cx="250.5" cy="74.2539" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="109" x="259.5" y="77.2549">User getUser(String u)</text>
+        <ellipse cx="250.5" cy="88.0898" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="259.5" y="91.0908">User getUser(int id)</text>
+        <ellipse cx="250.5" cy="101.9258" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="135" x="259.5" y="104.9268">ArrayList&lt;User&gt; getUsers()</text>
+        <ellipse cx="250.5" cy="115.7617" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="391" x="259.5" y="118.7627">boolean createCustomer(String username, String password1, String password2)</text>
+        <ellipse cx="250.5" cy="129.5977" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="375" x="259.5" y="132.5986">boolean createAdmin(String username, String password1, String password2)</text>
+        <ellipse cx="250.5" cy="143.4336" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="196" x="259.5" y="146.4346">ArrayList&lt;CupCakePiece&gt; getToppings()</text>
+        <ellipse cx="250.5" cy="157.2695" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="191" x="259.5" y="160.2705">ArrayList&lt;CupCakePiece&gt; getBottoms()</text>
+        <ellipse cx="250.5" cy="171.1055" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="155" x="259.5" y="174.1064">CupCakePiece getTopping(int id)</text>
+        <ellipse cx="250.5" cy="184.9414" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="150" x="259.5" y="187.9424">CupCakePiece getBottom(int id)</text>
+        <ellipse cx="250.5" cy="198.7773" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="222" x="259.5" y="201.7783">User login(String username, String password)</text>
+        <ellipse cx="250.5" cy="212.6133" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="259.5" y="215.6143">Order getOrder(int id)</text>
+        <ellipse cx="250.5" cy="226.4492" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="196" x="259.5" y="229.4502">ArrayList&lt;Order&gt; getUsersOrders(int id)</text>
+        <ellipse cx="250.5" cy="240.2852" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="157" x="259.5" y="243.2861">ArrayList&lt;Order&gt; getAllOrders()</text>
+        <ellipse cx="250.5" cy="254.1211" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="253" x="259.5" y="257.1221">int insertOrder(ArrayList&lt;CupCake&gt; cart, User user)</text>
+        <ellipse cx="250.5" cy="267.957" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="232" x="259.5" y="270.958">boolean addTopping(String flavor, doubke price)</text>
+        <ellipse cx="250.5" cy="281.793" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="227" x="259.5" y="284.7939">boolean addBottom(String flavor, doubke price)</text>
+        <ellipse cx="250.5" cy="295.6289" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="243" x="259.5" y="298.6299">boolean changeOrderlineAmount(int id, int amount)</text>
+        <ellipse cx="250.5" cy="309.4648" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="120" x="259.5" y="312.4658">String getUserById(int id)</text>
+        <ellipse cx="250.5" cy="323.3008" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="164" x="259.5" y="326.3018">double deposit(int id double value)</text>
+        <ellipse cx="250.5" cy="337.1367" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="193" x="259.5" y="340.1377">boolean withdrawal(int id, double value)</text>
+        <ellipse cx="250.5" cy="350.9727" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="231" x="259.5" y="353.9736">void updateOrderLine(int orderlineId, int amount)</text>
+        <!--class DBConnector-->
+        <rect fill="#FEFECE" height="144.8516" style="stroke: #A80036; stroke-width: 1.5;" width="160" x="368" y="420"/>
+        <ellipse cx="407.3" cy="436" fill="#FF0000" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M410.0969,433.1406 L410.0969,438.2813 Q410.0969,439.2656 409.7844,439.8281 Q409.2844,440.7188 408.3391,441.2344 Q407.3938,441.75 406.3625,441.75 Q405.0188,441.75 402.7063,440.625 L402.7063,437.8281 Q402.7063,437.2031 402.9484,436.9453 Q403.1906,436.6875 403.5656,436.6875 Q403.9406,436.6875 404.175,436.9453 Q404.4094,437.2031 404.4094,437.8281 L404.4094,439.4844 Q405.5813,440.0469 406.4094,440.0469 Q406.8625,440.0469 407.3313,439.8438 Q407.8,439.6406 408.0422,439.3594 Q408.2844,439.0781 408.3625,438.7969 Q408.3938,438.6563 408.3938,438.0938 L408.3938,433.1406 L406.3313,433.1406 Q405.7219,433.1406 405.4563,432.9063 Q405.1906,432.6719 405.1906,432.2813 Q405.1906,431.9063 405.4563,431.6719 Q405.7219,431.4375 406.3313,431.4375 L411.0969,431.4375 Q411.7063,431.4375 411.9719,431.6719 Q412.2375,431.9063 412.2375,432.2813 Q412.2375,432.6719 411.9719,432.9063 Q411.7063,433.1406 411.0969,433.1406 L410.0969,433.1406 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="74" x="426.7" y="440.9102">DBConnector</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="369" x2="527" y1="452" y2="452"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="376" y="461.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="388" y="467.4189">Connection conn</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="376" y="475.2539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="388" y="481.2549">String IP</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="376" y="489.0898"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="41" x="388" y="495.0908">int PORT</text>
+        <ellipse cx="379" cy="505.9258" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="88" x="388" y="508.9268">String DATABASE</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="376" y="516.7617"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="87" x="388" y="522.7627">String USERNAME</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="376" y="530.5977"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="91" x="388" y="536.5986">String PASSWORD</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="369" x2="527" y1="543.0156" y2="543.0156"/>
+        <ellipse cx="379" cy="555.4336" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="134" x="388" y="558.4346">Connection getConnection()</text>
+        <!--class CupCake-->
+        <rect fill="#FEFECE" height="172.5234" style="stroke: #A80036; stroke-width: 1.5;" width="133" x="209.5" y="625"/>
+        <ellipse cx="246.55" cy="641" fill="#ADD8E6" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M245.4094,641.7969 L245.4094,644.2969 L249.7375,644.2969 L249.7375,643.375 Q249.7375,642.7656 249.9797,642.5 Q250.2219,642.2344 250.5969,642.2344 Q250.9719,642.2344 251.2063,642.5 Q251.4406,642.7656 251.4406,643.375 L251.4406,646 L243.4406,646 Q242.8156,646 242.5578,645.7656 Q242.3,645.5313 242.3,645.1406 Q242.3,644.7656 242.5656,644.5313 Q242.8313,644.2969 243.4406,644.2969 L243.7063,644.2969 L243.7063,637.6406 L243.4406,637.6406 Q242.8156,637.6406 242.5578,637.4063 Q242.3,637.1719 242.3,636.7813 Q242.3,636.4063 242.5578,636.1719 Q242.8156,635.9375 243.4406,635.9375 L251.0656,635.9375 L251.0656,638.5313 Q251.0656,639.1406 250.8391,639.3984 Q250.6125,639.6563 250.2219,639.6563 Q249.8469,639.6563 249.6125,639.3984 Q249.3781,639.1406 249.3781,638.5313 L249.3781,637.6406 L245.4094,637.6406 L245.4094,640.0938 L246.8938,640.0938 Q246.8938,639.4375 247.0188,639.25 Q247.2844,638.8438 247.7531,638.8438 Q248.1281,638.8438 248.3625,639.1016 Q248.5969,639.3594 248.5969,639.9688 L248.5969,641.9375 Q248.5969,642.4844 248.4719,642.6719 Q248.2063,643.0625 247.7531,643.0625 Q247.2844,643.0625 247.0188,642.6563 Q246.8938,642.4688 246.8938,641.7969 L245.4094,641.7969 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="52" x="265.45" y="645.9102">CupCake</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="210.5" x2="341.5" y1="657" y2="657"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="217.5" y="666.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="229.5" y="672.4189">CupCakePiece bottom</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="217.5" y="680.2539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="107" x="229.5" y="686.2549">CupCakePiece topping</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="217.5" y="694.0898"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="59" x="229.5" y="700.0908">double price</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="217.5" y="707.9258"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="229.5" y="713.9268">int amount</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="210.5" x2="341.5" y1="720.3438" y2="720.3438"/>
+        <ellipse cx="220.5" cy="732.7617" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="229.5" y="735.7627">int getAmount()</text>
+        <ellipse cx="220.5" cy="746.5977" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="71" x="229.5" y="749.5986">int hashCode()</text>
+        <ellipse cx="220.5" cy="760.4336" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="229.5" y="763.4346">boolean equals()</text>
+        <ellipse cx="220.5" cy="774.2695" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="86" x="229.5" y="777.2705">void addAmount()</text>
+        <ellipse cx="220.5" cy="788.1055" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="229.5" y="791.1064">String toString()</text>
+        <!--class CupCakePiece-->
+        <rect fill="#FEFECE" height="131.0156" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="59.5" y="646"/>
+        <ellipse cx="74.5" cy="662" fill="#ADD8E6" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M73.3594,662.7969 L73.3594,665.2969 L77.6875,665.2969 L77.6875,664.375 Q77.6875,663.7656 77.9297,663.5 Q78.1719,663.2344 78.5469,663.2344 Q78.9219,663.2344 79.1563,663.5 Q79.3906,663.7656 79.3906,664.375 L79.3906,667 L71.3906,667 Q70.7656,667 70.5078,666.7656 Q70.25,666.5313 70.25,666.1406 Q70.25,665.7656 70.5156,665.5313 Q70.7813,665.2969 71.3906,665.2969 L71.6563,665.2969 L71.6563,658.6406 L71.3906,658.6406 Q70.7656,658.6406 70.5078,658.4063 Q70.25,658.1719 70.25,657.7813 Q70.25,657.4063 70.5078,657.1719 Q70.7656,656.9375 71.3906,656.9375 L79.0156,656.9375 L79.0156,659.5313 Q79.0156,660.1406 78.7891,660.3984 Q78.5625,660.6563 78.1719,660.6563 Q77.7969,660.6563 77.5625,660.3984 Q77.3281,660.1406 77.3281,659.5313 L77.3281,658.6406 L73.3594,658.6406 L73.3594,661.0938 L74.8438,661.0938 Q74.8438,660.4375 74.9688,660.25 Q75.2344,659.8438 75.7031,659.8438 Q76.0781,659.8438 76.3125,660.1016 Q76.5469,660.3594 76.5469,660.9688 L76.5469,662.9375 Q76.5469,663.4844 76.4219,663.6719 Q76.1563,664.0625 75.7031,664.0625 Q75.2344,664.0625 74.9688,663.6563 Q74.8438,663.4688 74.8438,662.7969 L73.3594,662.7969 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="83" x="88.5" y="666.9102">CupCakePiece</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="60.5" x2="173.5" y1="678" y2="678"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="67.5" y="687.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="79.5" y="693.4189">int id</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="67.5" y="701.2539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="59" x="79.5" y="707.2549">String flavor</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="67.5" y="715.0898"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="59" x="79.5" y="721.0908">double price</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="60.5" x2="173.5" y1="727.5078" y2="727.5078"/>
+        <ellipse cx="70.5" cy="739.9258" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="79.5" y="742.9268">String toString()</text>
+        <ellipse cx="70.5" cy="753.7617" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="71" x="79.5" y="756.7627">int hashCode()</text>
+        <ellipse cx="70.5" cy="767.5977" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="79.5" y="770.5986">boolean equals()</text>
+        <!--class Order-->
+        <rect fill="#FEFECE" height="103.3438" style="stroke: #A80036; stroke-width: 1.5;" width="178" x="6" y="441"/>
+        <ellipse cx="75.25" cy="457" fill="#ADD8E6" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M74.1094,457.7969 L74.1094,460.2969 L78.4375,460.2969 L78.4375,459.375 Q78.4375,458.7656 78.6797,458.5 Q78.9219,458.2344 79.2969,458.2344 Q79.6719,458.2344 79.9063,458.5 Q80.1406,458.7656 80.1406,459.375 L80.1406,462 L72.1406,462 Q71.5156,462 71.2578,461.7656 Q71,461.5313 71,461.1406 Q71,460.7656 71.2656,460.5313 Q71.5313,460.2969 72.1406,460.2969 L72.4063,460.2969 L72.4063,453.6406 L72.1406,453.6406 Q71.5156,453.6406 71.2578,453.4063 Q71,453.1719 71,452.7813 Q71,452.4063 71.2578,452.1719 Q71.5156,451.9375 72.1406,451.9375 L79.7656,451.9375 L79.7656,454.5313 Q79.7656,455.1406 79.5391,455.3984 Q79.3125,455.6563 78.9219,455.6563 Q78.5469,455.6563 78.3125,455.3984 Q78.0781,455.1406 78.0781,454.5313 L78.0781,453.6406 L74.1094,453.6406 L74.1094,456.0938 L75.5938,456.0938 Q75.5938,455.4375 75.7188,455.25 Q75.9844,454.8438 76.4531,454.8438 Q76.8281,454.8438 77.0625,455.1016 Q77.2969,455.3594 77.2969,455.9688 L77.2969,457.9375 Q77.2969,458.4844 77.1719,458.6719 Q76.9063,459.0625 76.4531,459.0625 Q75.9844,459.0625 75.7188,458.6563 Q75.5938,458.4688 75.5938,457.7969 L74.1094,457.7969 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="31" x="95.75" y="461.9102">Order</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="183" y1="473" y2="473"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="482.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="26" y="488.4189">int id</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="496.2539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="152" x="26" y="502.2549">ArrayList&lt;Orderline&gt; orderlines</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="510.0898"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="79" x="26" y="516.0908">double totalPrice</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="523.9258"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="26" y="529.9268">String dateTime</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="183" y1="536.3438" y2="536.3438"/>
+        <!--class Orderline-->
+        <rect fill="#FEFECE" height="144.8516" style="stroke: #A80036; stroke-width: 1.5;" width="114" x="219" y="420"/>
+        <ellipse cx="247.95" cy="436" fill="#ADD8E6" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M246.8094,436.7969 L246.8094,439.2969 L251.1375,439.2969 L251.1375,438.375 Q251.1375,437.7656 251.3797,437.5 Q251.6219,437.2344 251.9969,437.2344 Q252.3719,437.2344 252.6063,437.5 Q252.8406,437.7656 252.8406,438.375 L252.8406,441 L244.8406,441 Q244.2156,441 243.9578,440.7656 Q243.7,440.5313 243.7,440.1406 Q243.7,439.7656 243.9656,439.5313 Q244.2313,439.2969 244.8406,439.2969 L245.1063,439.2969 L245.1063,432.6406 L244.8406,432.6406 Q244.2156,432.6406 243.9578,432.4063 Q243.7,432.1719 243.7,431.7813 Q243.7,431.4063 243.9578,431.1719 Q244.2156,430.9375 244.8406,430.9375 L252.4656,430.9375 L252.4656,433.5313 Q252.4656,434.1406 252.2391,434.3984 Q252.0125,434.6563 251.6219,434.6563 Q251.2469,434.6563 251.0125,434.3984 Q250.7781,434.1406 250.7781,433.5313 L250.7781,432.6406 L246.8094,432.6406 L246.8094,435.0938 L248.2938,435.0938 Q248.2938,434.4375 248.4188,434.25 Q248.6844,433.8438 249.1531,433.8438 Q249.5281,433.8438 249.7625,434.1016 Q249.9969,434.3594 249.9969,434.9688 L249.9969,436.9375 Q249.9969,437.4844 249.8719,437.6719 Q249.6063,438.0625 249.1531,438.0625 Q248.6844,438.0625 248.4188,437.6563 Q248.2938,437.4688 248.2938,436.7969 L246.8094,436.7969 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="51" x="265.05" y="440.9102">Orderline</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="220" x2="332" y1="452" y2="452"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="227" y="461.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="44" x="239" y="467.4189">int userId</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="227" y="475.2539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="48" x="239" y="481.2549">int orderId</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="227" y="489.0898"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="68" x="239" y="495.0908">int orderLineId</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="227" y="502.9258"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="88" x="239" y="508.9268">CupCake cupCake</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="220" x2="332" y1="515.3438" y2="515.3438"/>
+        <ellipse cx="230" cy="527.7617" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="239" y="530.7627">String toString()</text>
+        <ellipse cx="230" cy="541.5977" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="71" x="239" y="544.5986">int hashCode()</text>
+        <ellipse cx="230" cy="555.4336" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="239" y="558.4346">boolean equals()</text>
+        <!--class User-->
+        <rect fill="#FEFECE" height="131.0156" style="stroke: #A80036; stroke-width: 1.5;" width="107" x="41.5" y="118.5"/>
+        <ellipse cx="78.1" cy="134.5" fill="#ADD8E6" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M76.9594,135.2969 L76.9594,137.7969 L81.2875,137.7969 L81.2875,136.875 Q81.2875,136.2656 81.5297,136 Q81.7719,135.7344 82.1469,135.7344 Q82.5219,135.7344 82.7563,136 Q82.9906,136.2656 82.9906,136.875 L82.9906,139.5 L74.9906,139.5 Q74.3656,139.5 74.1078,139.2656 Q73.85,139.0313 73.85,138.6406 Q73.85,138.2656 74.1156,138.0313 Q74.3813,137.7969 74.9906,137.7969 L75.2563,137.7969 L75.2563,131.1406 L74.9906,131.1406 Q74.3656,131.1406 74.1078,130.9063 Q73.85,130.6719 73.85,130.2813 Q73.85,129.9063 74.1078,129.6719 Q74.3656,129.4375 74.9906,129.4375 L82.6156,129.4375 L82.6156,132.0313 Q82.6156,132.6406 82.3891,132.8984 Q82.1625,133.1563 81.7719,133.1563 Q81.3969,133.1563 81.1625,132.8984 Q80.9281,132.6406 80.9281,132.0313 L80.9281,131.1406 L76.9594,131.1406 L76.9594,133.5938 L78.4438,133.5938 Q78.4438,132.9375 78.5688,132.75 Q78.8344,132.3438 79.3031,132.3438 Q79.6781,132.3438 79.9125,132.6016 Q80.1469,132.8594 80.1469,133.4688 L80.1469,135.4375 Q80.1469,135.9844 80.0219,136.1719 Q79.7563,136.5625 79.3031,136.5625 Q78.8344,136.5625 78.5688,136.1563 Q78.4438,135.9688 78.4438,135.2969 L76.9594,135.2969 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="27" x="96.9" y="139.4102">User</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="42.5" x2="147.5" y1="150.5" y2="150.5"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="49.5" y="159.918"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="61.5" y="165.9189">int id</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="49.5" y="173.7539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="79" x="61.5" y="179.7549">String username</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="49.5" y="187.5898"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="61.5" y="193.5908">String password</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="49.5" y="201.4258"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="61.5" y="207.4268">double balance</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="49.5" y="215.2617"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="61.5" y="221.2627">String role</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="42.5" x2="147.5" y1="227.6797" y2="227.6797"/>
+        <ellipse cx="52.5" cy="240.0977" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="61.5" y="243.0986">String toString()</text>
+        <path d="M174.762,711.5 C186.23,711.5 197.699,711.5 209.167,711.5 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="182.6112" y="707.9916">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="196.5837" y="708.1654">*</text>
+        <path d="M184.086,492.5 C195.695,492.5 207.304,492.5 218.913,492.5 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="192.0426" y="489.308">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="205.906" y="488.9537">*</text>
+        <path d="M276,565.155 C276,584.29 276,605.16 276,624.961 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="270.7617" y="586.3614">*</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="268.6883" y="614.0731">1</text>
+        <path d="M95,249.626 C95,306.531 95,388.274 95,440.632 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="87.6172" y="271.1923">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="89.6641" y="430.0829">*</text>
+        <path d="M448,360.183 C448,379.14 448,397.641 448,414.491 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <polygon fill="#A80036" points="448,419.667,452,410.667,448,414.667,444,410.667,448,419.667" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <!--
+@startuml
+
+skinparam shadowing false
+
+class DAO << (J,red) >>
+class DBConnector << (J,red) >>
+class CupCake << (E,lightblue) >>
+class CupCakePiece << (E,lightblue) >>
+class Order << (E,lightblue) >>
+class Orderline << (E,lightblue) >>
+class User << (E,lightblue) >>
+
+CupCake : - CupCakePiece bottom
+CupCake : - CupCakePiece topping
+CupCake : - double price
+CupCake : - int amount
+CupCake : + int getAmount()
+CupCake : + int hashCode()
+CupCake : + boolean equals()
+CupCake : + void addAmount()
+CupCake : + String toString()
+CupCakePiece : - int id
+CupCakePiece : - String flavor
+CupCakePiece : - double price
+CupCakePiece : + String toString()
+CupCakePiece : + int hashCode()
+CupCakePiece : + boolean equals()
+Order : - int id
+Order : - ArrayList<Orderline> orderlines
+Order : - double totalPrice
+Order : - String dateTime
+Orderline : - int userId
+Orderline : - int orderId
+Orderline : - int orderLineId
+Orderline : - CupCake cupCake
+Orderline : + String toString()
+Orderline : + int hashCode()
+Orderline : + boolean equals()
+User : - int id
+User : - String username
+User : - String password
+User : - double balance
+User : - String role
+User : + String toString()
+DAO : - DBConnector conn
+DAO : + User getUser(String u)
+DAO : + User getUser(int id)
+DAO : + ArrayList<User> getUsers()
+DAO : + boolean createCustomer(String username, String password1, String password2)
+DAO : + boolean createAdmin(String username, String password1, String password2)
+DAO : + ArrayList<CupCakePiece> getToppings()
+DAO : + ArrayList<CupCakePiece> getBottoms()
+DAO : + CupCakePiece getTopping(int id)
+DAO : + CupCakePiece getBottom(int id)
+DAO : + User login(String username, String password)
+DAO : + Order getOrder(int id)
+DAO : + ArrayList<Order> getUsersOrders(int id)
+DAO : + ArrayList<Order> getAllOrders()
+DAO : + int insertOrder(ArrayList<CupCake> cart, User user)
+DAO : + boolean addTopping(String flavor, doubke price)
+DAO : + boolean addBottom(String flavor, doubke price)
+DAO : + boolean changeOrderlineAmount(int id, int amount)
+DAO : + String getUserById(int id)
+DAO : + double deposit(int id double value)
+DAO : + boolean withdrawal(int id, double value)
+DAO : + void updateOrderLine(int orderlineId, int amount)
+DBConnector : - Connection conn
+DBConnector : - String IP
+DBConnector : - int PORT
+DBConnector : + String DATABASE
+DBConnector : - String USERNAME
+DBConnector : - String PASSWORD
+DBConnector : + Connection getConnection()
+
+CupCake "*" -left- "2" CupCakePiece
+Order "1" -right- "*" Orderline
+Orderline "*" - - "1" CupCake
+User "1" - - "*" Order
+DAO - -> DBConnector
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 18:18:59 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_144-b01
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: da
+Country: DK
+-->
+    </g>
+</svg>
