@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="Data.Order"%>
-<%@page import="Data.OrderLine"%>
+<%@page import="Data.Orderline"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 
     Order order = (Order) request.getAttribute("orderDetails");
 
-    ArrayList<OrderLine> items = order.getOrder();
+    ArrayList<Orderline> items = order.getOrderlines();
 
 %>
 
@@ -37,7 +37,7 @@
         <hr>
 
         <p>Currently inspecting order: <% out.print(order.getId()); %></p>
-        <p>Ordered by user_id: <% out.print(order.getOrder().get(0).getUserId()); %></p>
+        <p>Ordered by user_id: <% out.print(order.getOrderlines().get(0).getUserId()); %></p>
         <form class="mb-2" name="update_form" action="updateInvoice" method="get">
             <table class="table table-striped" style="background-color: white;">
                 <thead>

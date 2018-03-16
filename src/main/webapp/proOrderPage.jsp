@@ -1,5 +1,5 @@
 
-<%@page import="Data.OrderLine"%>
+<%@page import="Data.Orderline"%>
 <%@page import="Data.Order"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,7 +15,7 @@ ArrayList<Order> orders = (ArrayList<Order>)request.getAttribute("usersOrders");
     
 Order order = (Order) request.getAttribute("orderDetails");
 
-ArrayList<OrderLine> items = order.getOrder();
+ArrayList<Orderline> items = order.getOrderlines();
 
 %>
 
@@ -89,7 +89,7 @@ ArrayList<OrderLine> items = order.getOrder();
                 <%
                 
                 double price = 0;
-                for(OrderLine o : items){
+                for(Orderline o : items){
                     out.println("<tr>");
                     out.println("<td>" + o.getCupCake().getAmount() + "</td>");
                     out.println("<td>" + o.getCupCake().getBottom().getFlavor() + "</td>");
