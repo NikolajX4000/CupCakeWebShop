@@ -70,14 +70,12 @@ DBConnector : - int PORT
 DBConnector : + String DATABASE
 DBConnector : - String USERNAME
 DBConnector : - String PASSWORD
-DBConnector : + DBConnector()
 DBConnector : + Connection getConnection()
 
 CupCake "*" -left- "2" CupCakePiece
 Order "1" -right- "*" Orderline
 Orderline "*" -- "1" CupCake
 User "1" -- "*" Order
-User "1" -- "*" Orderline
 DAO --> DBConnector
 
 @enduml
