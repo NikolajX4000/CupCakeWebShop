@@ -1,20 +1,26 @@
 @startuml
-skinparam backgroundColor wihte
+
 skinparam Shadowing false
 
-Title Logging in
-State loginPage.jsp
-State "Login Error" as error
-State "ShopPage.jsp" as LoggedIn
+title "Login - Sequence Diagram"
 
-note right of LoggedIn
-User logged in
-and stored in session
-end note
+actor User
+boundary loginPage.jsp as login
+boundary shopPage.jsp as shop
+participant shopPage as shopser
+participant welcomePage as welcome
+participant DAO
+database Database
 
-[*] -> loginPage.jsp
-loginPage.jsp --> LoggedIn : user and pw OK
-loginPage.jsp --> error : user or pw not OK
-error --> loginPage.jsp : try-again
-LoggedIn --> [*]
+User -> login : username & password
+login -> welcome: http POST login
+welcome -> DAO: validate()
+DAO -> Database: executeQuery()
+Database -> DAO: resultset
+DAO -> DAO: validate resultset
+DAO -> welcome: OK
+welcome -> shopser: redirect
+shopser -> shop: forward
+shop -> User: Welcome
+
 @enduml
