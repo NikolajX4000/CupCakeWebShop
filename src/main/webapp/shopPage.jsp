@@ -37,7 +37,7 @@
                         <select class="custom-select" id="bottoms" name="bottom">
                             <% for (CupCakePiece cp : bottoms)
                                 { %>
-                            <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor());%></option><%
+                            <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor() + " (" + cp.getPrice() + " $)");%></option><%
                                 } %>
                         </select>
                     </div>
@@ -46,7 +46,7 @@
                         <select class="custom-select" id="toppings" name="topping">
                             <% for (CupCakePiece cp : toppings)
                                 { %>
-                            <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor());%></option><%
+                            <option value="<%out.print(cp.getId());%>"><%out.print(cp.getFlavor() + " (" + cp.getPrice() + " $)");%></option><%
                                 }%>
                         </select>
                     </div>
