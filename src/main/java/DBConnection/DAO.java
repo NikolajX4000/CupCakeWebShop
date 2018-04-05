@@ -364,6 +364,28 @@ public class DAO {
      * @param id the id of the desired order, should be not null
      * @return the order with specified id or null
      */
+    
+    /***** Optimeret SQL Statement. *****
+    
+    SELECT  users.user_id, orderline.id AS orderline_id, orders.id AS order_id,  
+            toppings.id AS topping_id, toppings.topping, toppings.price AS topping_price, 
+            bottoms.id AS bottom_id, bottoms.bottom, bottoms.price AS bottom_price, 
+            orderline.amount, orders.date
+            
+    FROM orderline 
+	INNER JOIN orders 
+            ON orders.id=orderline.order_id 
+	INNER JOIN toppings 
+            ON toppings.id=orderline.topping_id
+        INNER JOIN bottoms
+            ON bottoms.id=orderline.bottom_id
+        INNER JOIN users
+            ON users.user_id=orders.user_id
+        WHERE order_id = 1;
+    
+        note:: dette vil lede til en ændring i kolonnen når vi kalder vores resultSet
+    */
+    
     public Order getOrder(int id) {
         ArrayList<Orderline> orderlines = new ArrayList();
         PreparedStatement stmt = null;
