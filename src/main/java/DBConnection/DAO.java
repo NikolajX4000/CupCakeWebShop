@@ -358,12 +358,7 @@ public class DAO {
         return user;
     }
 
-    /**
-     * Takes an order id and returns the order with that id.
-     *
-     * @param id the id of the desired order, should be not null
-     * @return the order with specified id or null
-     */
+    
     
     /***** Optimeret SQL Statement. *****
     
@@ -385,7 +380,12 @@ public class DAO {
     
         note:: dette vil lede til en ændring i kolonnen når vi kalder vores resultSet
     */
-    
+    /**
+     * Takes an order id and returns the order with that id.
+     *
+     * @param id the id of the desired order, should be not null
+     * @return the order with specified id or null
+     */
     public Order getOrder(int id) {
         ArrayList<Orderline> orderlines = new ArrayList();
         PreparedStatement stmt = null;
