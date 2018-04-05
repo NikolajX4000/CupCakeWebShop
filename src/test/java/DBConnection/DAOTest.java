@@ -23,25 +23,6 @@ import static org.junit.Assert.*;
  */
 public class DAOTest {
     
-    public DAOTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     /**
      * Test of getUser method, of class DAO.
      */
