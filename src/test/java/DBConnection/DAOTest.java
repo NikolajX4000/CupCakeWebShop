@@ -223,11 +223,11 @@ public class DAOTest {
     @Test
     public void testGetUsersOrders() {
         System.out.println("getUsersOrders");
-        int id = 0;
+        int id = 51;
         DAO instance = new DAO();
-        ArrayList<Order> expResult = null;
+        int expResult = 37;
         ArrayList<Order> result = instance.getUsersOrders(id);
-        assertEquals(expResult, result);
+        assertEquals(expResult, result.get(0).getId());
 
     }
 
@@ -238,28 +238,27 @@ public class DAOTest {
     public void testGetAllOrders() {
         System.out.println("getAllOrders");
         DAO instance = new DAO();
-        ArrayList<Order> expResult = null;
+        int expResult = 11;
         ArrayList<Order> result = instance.getAllOrders();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result.get(10).getId());
     }
 
     /**
      * Test of insertOrder method, of class DAO.
      */
-    @Test
+    /*  @Test
     public void testInsertOrder() {
         System.out.println("insertOrder");
-        ArrayList<CupCake> cart = null;
         DAO instance = new DAO();
+        ArrayList<CupCake> cart = new ArrayList();
+        CupCakePiece btm = instance.getBottom(1);
+        CupCakePiece tpn = instance.getTopping(1);
+        cart.add( new CupCake(btm, tpn, 1) );
         User user = instance.login("JUnit_testUser", "pw");
-        int expResult = 0;
+        int expResult = 48; // --> increments for every test run
         int result = instance.insertOrder(cart, user);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    } */
 
     /**
      * Test of addTopping method, of class DAO.
