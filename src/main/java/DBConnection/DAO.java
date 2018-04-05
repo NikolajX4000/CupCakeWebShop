@@ -376,7 +376,7 @@ public class DAO {
             ON bottoms.id=orderline.bottom_id
         INNER JOIN users
             ON users.user_id=orders.user_id
-        WHERE order_id = 1;
+        WHERE order_id = ?;
     
         note:: dette vil lede til en ændring i kolonnen når vi kalder vores resultSet
     */
